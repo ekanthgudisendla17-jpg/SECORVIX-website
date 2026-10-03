@@ -1,43 +1,10 @@
+import Navbar from "./components/Navbar";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#05070b] text-white">
       {/* Navigation */}
-      <header className="border-b border-white/10">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
-          <a href="#" className="text-2xl font-bold tracking-[0.18em]">
-            SECORVIX
-          </a>
-
-          <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-            <a href="#solutions" className="transition hover:text-cyan-400">
-              Solutions
-            </a>
-
-            <a href="#services" className="transition hover:text-cyan-400">
-              Services
-            </a>
-
-            <a href="#industries" className="transition hover:text-cyan-400">
-              Industries
-            </a>
-
-            <a href="#about" className="transition hover:text-cyan-400">
-              About
-            </a>
-
-            <a href="#contact" className="transition hover:text-cyan-400">
-              Contact
-            </a>
-          </nav>
-
-          <a
-            href="#contact"
-            className="rounded-md border border-cyan-400/40 bg-cyan-400/10 px-5 py-2.5 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-400 hover:text-black"
-          >
-            Talk to an Expert
-          </a>
-        </div>
-      </header>
+     <Navbar />
 
       {/* Hero */}
       <section className="relative overflow-hidden">
@@ -51,7 +18,7 @@ export default function Home() {
               CYBERSECURITY • INTEGRATION • AI
             </div>
 
-            <h1 className="max-w-3xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
               Engineering Cyber Resilience for the{" "}
               <span className="text-cyan-400">Digital Enterprise</span>
             </h1>
@@ -70,14 +37,14 @@ export default function Home() {
 
             <div className="mt-10 flex flex-wrap gap-4">
               <a
-                href="#contact"
+                href="/contact"
                 className="rounded-md bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-cyan-300"
               >
                 Talk to a Security Expert
               </a>
 
               <a
-                href="#solutions"
+                href="/solutions"
                 className="rounded-md border border-white/15 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-cyan-400/50 hover:text-cyan-300"
               >
                 Explore Our Capabilities
@@ -833,7 +800,7 @@ export default function Home() {
             </div>
 
             <a
-              href="#contact"
+              href="/contact"
               className="shrink-0 rounded-md bg-cyan-400 px-6 py-3 text-sm font-semibold text-black transition hover:bg-cyan-300"
             >
               Strengthen Your Security Operations
@@ -1412,14 +1379,14 @@ export default function Home() {
 
               <div className="mt-10 flex flex-wrap justify-center gap-4">
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="rounded-md bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-cyan-300"
                 >
                   Talk to Our Cybersecurity Experts
                 </a>
 
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="rounded-md border border-white/15 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-cyan-400/50 hover:text-cyan-300"
                 >
                   Request a Security Assessment
@@ -1456,19 +1423,19 @@ export default function Home() {
               </p>
 
               <div className="mt-5 flex flex-col gap-3 text-sm text-white/50">
-                <a href="#about" className="transition hover:text-cyan-300">
+                <a href="/about" className="transition hover:text-cyan-300">
                   About
                 </a>
-                <a href="#solutions" className="transition hover:text-cyan-300">
+                <a href="/solutions" className="transition hover:text-cyan-300">
                   Solutions
                 </a>
-                <a href="#services" className="transition hover:text-cyan-300">
+                <a href="/security-integration" className="transition hover:text-cyan-300">
                   Services
                 </a>
-                <a href="#industries" className="transition hover:text-cyan-300">
-                  Industries
-                </a>
-                <a href="#contact" className="transition hover:text-cyan-300">
+               <a href="/industries" className="transition hover:text-cyan-300">
+  Industries
+</a>
+                <a href="/contact" className="transition hover:text-cyan-300">
                   Contact
                 </a>
               </div>
@@ -1486,7 +1453,7 @@ export default function Home() {
                 <a href="#" className="transition hover:text-cyan-300">
                   Careers
                 </a>
-                <a href="#contact" className="transition hover:text-cyan-300">
+                <a href="/contact" className="transition hover:text-cyan-300">
                   Contact
                 </a>
               </div>
