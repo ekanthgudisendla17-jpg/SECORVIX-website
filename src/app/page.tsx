@@ -9,18 +9,18 @@ export default function Home() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         {/* Background glow */}
-        <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
+        <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#255dce]/10 blur-[120px]" />
 
         <div className="relative mx-auto grid min-h-[760px] max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2 lg:px-8">
           {/* Left side */}
           <div>
-            <div className="mb-6 inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-xs font-medium tracking-[0.2em] text-cyan-300">
+            <div className="mb-6 inline-flex items-center rounded-full border border-[#255dce]/20 bg-[#255dce]/5 px-4 py-2 text-xs font-medium tracking-[0.2em] text-[#255dce]">
               CYBERSECURITY • INTEGRATION • AI
             </div>
 
             <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
               Engineering Cyber Resilience for the{" "}
-              <span className="text-cyan-400">Digital Enterprise</span>
+              <span className="text-[#255dce]">Digital Enterprise</span>
             </h1>
 
             <p className="mt-8 max-w-2xl text-lg leading-8 text-white/60">
@@ -38,14 +38,14 @@ export default function Home() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="/contact"
-                className="rounded-md bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-cyan-300"
+                className="rounded-md bg-[#255dce] px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-[#255dce]/80"
               >
                 Talk to a Security Expert
               </a>
 
               <a
                 href="/solutions"
-                className="rounded-md border border-white/15 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-cyan-400/50 hover:text-cyan-300"
+                className="rounded-md border border-white/15 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-[#255dce]/50 hover:text-[#255dce]"
               >
                 Explore Our Capabilities
               </a>
@@ -55,16 +55,16 @@ export default function Home() {
           {/* Right side visual */}
           <div className="relative flex items-center justify-center">
             <div className="relative h-[470px] w-full max-w-[520px]">
-              <div className="absolute inset-0 rounded-full border border-cyan-400/10" />
-              <div className="absolute inset-12 rounded-full border border-cyan-400/15" />
-              <div className="absolute inset-24 rounded-full border border-cyan-400/20" />
+              <div className="absolute inset-0 rounded-full border border-[#255dce]/10" />
+              <div className="absolute inset-12 rounded-full border border-[#255dce]/15" />
+              <div className="absolute inset-24 rounded-full border border-[#255dce]/20" />
 
-              <div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-cyan-400/40 bg-[#07131a] shadow-[0_0_80px_rgba(34,211,238,0.2)]">
+              <div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#255dce]/40 bg-[#07131a] shadow-[0_0_80px_rgba(34,211,238,0.2)]">
                 <div className="text-center">
                   <div className="text-xl font-bold tracking-[0.15em]">
                     SECORVIX
                   </div>
-                  <div className="mt-2 text-[10px] tracking-[0.18em] text-cyan-300">
+                  <div className="mt-2 text-[10px] tracking-[0.18em] text-[#255dce]">
                     SECURITY CORE
                   </div>
                 </div>
@@ -90,7 +90,7 @@ export default function Home() {
                 DATA
               </div>
 
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-center text-xs tracking-[0.24em] text-cyan-300/70">
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-center text-xs tracking-[0.24em] text-[#255dce]/70">
                 SECURE • INTEGRATE • DETECT • RESPOND
               </div>
             </div>
@@ -101,13 +101,13 @@ export default function Home() {
       <section className="border-t border-white/10 bg-[#070a0f] py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-cyan-400">
+            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-[#255dce]">
               THE SECORVIX PHILOSOPHY
             </p>
 
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
               One Name.{" "}
-              <span className="text-cyan-400">
+              <span className="text-[#255dce]">
                 Six Cybersecurity Principles.
               </span>
             </h2>
@@ -120,9 +120,9 @@ export default function Home() {
 
           <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {/* Security */}
-            <div className="group rounded-2xl border border-white/10 bg-white/[0.025] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-cyan-400/[0.03]">
+            <div className="group rounded-2xl border border-[#021861] bg-white/[0.025] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40 hover:bg-[#255dce]/[0.03]">
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-4xl font-semibold text-cyan-400">S</span>
+                <span className="text-4xl font-semibold text-[#255dce]">S</span>
                 <span className="text-xs tracking-[0.2em] text-white/25">
                   01
                 </span>
@@ -136,9 +136,9 @@ export default function Home() {
             </div>
 
             {/* Orchestration */}
-            <div className="group rounded-2xl border border-white/10 bg-white/[0.025] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-cyan-400/[0.03]">
+            <div className="group rounded-2xl border border-[#021861] bg-white/[0.025] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40 hover:bg-[#255dce]/[0.03]">
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-4xl font-semibold text-cyan-400">O</span>
+                <span className="text-4xl font-semibold text-[#255dce]">O</span>
                 <span className="text-xs tracking-[0.2em] text-white/25">
                   02
                 </span>
@@ -152,9 +152,9 @@ export default function Home() {
             </div>
 
             {/* Resilience */}
-            <div className="group rounded-2xl border border-white/10 bg-white/[0.025] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-cyan-400/[0.03]">
+            <div className="group rounded-2xl border border-[#021861] bg-white/[0.025] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40 hover:bg-[#255dce]/[0.03]">
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-4xl font-semibold text-cyan-400">R</span>
+                <span className="text-4xl font-semibold text-[#255dce]">R</span>
                 <span className="text-xs tracking-[0.2em] text-white/25">
                   03
                 </span>
@@ -169,9 +169,9 @@ export default function Home() {
             </div>
 
             {/* Visibility */}
-            <div className="group rounded-2xl border border-white/10 bg-white/[0.025] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-cyan-400/[0.03]">
+            <div className="group rounded-2xl border border-[#021861] bg-white/[0.025] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40 hover:bg-[#255dce]/[0.03]">
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-4xl font-semibold text-cyan-400">V</span>
+                <span className="text-4xl font-semibold text-[#255dce]">V</span>
                 <span className="text-xs tracking-[0.2em] text-white/25">
                   04
                 </span>
@@ -186,9 +186,9 @@ export default function Home() {
             </div>
 
             {/* Intelligence */}
-            <div className="group rounded-2xl border border-white/10 bg-white/[0.025] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-cyan-400/[0.03]">
+            <div className="group rounded-2xl border border-[#021861] bg-white/[0.025] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40 hover:bg-[#255dce]/[0.03]">
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-4xl font-semibold text-cyan-400">I</span>
+                <span className="text-4xl font-semibold text-[#255dce]">I</span>
                 <span className="text-xs tracking-[0.2em] text-white/25">
                   05
                 </span>
@@ -203,9 +203,9 @@ export default function Home() {
             </div>
 
             {/* Execution */}
-            <div className="group rounded-2xl border border-white/10 bg-white/[0.025] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-cyan-400/[0.03]">
+            <div className="group rounded-2xl border border-[#021861] bg-white/[0.025] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40 hover:bg-[#255dce]/[0.03]">
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-4xl font-semibold text-cyan-400">X</span>
+                <span className="text-4xl font-semibold text-[#255dce]">X</span>
                 <span className="text-xs tracking-[0.2em] text-white/25">
                   06
                 </span>
@@ -220,7 +220,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-14 rounded-2xl border border-cyan-400/10 bg-cyan-400/[0.025] p-8 lg:p-10">
+          <div className="mt-14 rounded-2xl border border-[#255dce]/10 bg-[#255dce]/[0.025] p-8 lg:p-10">
             <p className="max-w-4xl text-lg leading-8 text-white/65">
               SECORVIX is more than a cybersecurity services company. We are an
               integration and transformation partner helping organizations
@@ -235,13 +235,13 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-cyan-400">
+              <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-[#255dce]">
                 OUR CYBERSECURITY CAPABILITIES
               </p>
 
               <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
                 Security Across{" "}
-                <span className="text-cyan-400">
+                <span className="text-[#255dce]">
                   Every Layer of the Enterprise
                 </span>
               </h2>
@@ -262,13 +262,13 @@ export default function Home() {
 
           <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {/* Network Security */}
-            <div className="rounded-2xl border border-white/10 bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40">
+            <div className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40">
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-sm font-semibold tracking-[0.18em] text-cyan-400">
+                <span className="text-sm font-semibold tracking-[0.18em] text-[#255dce]">
                   01
                 </span>
 
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/20 bg-cyan-400/5 text-cyan-300">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#255dce]/20 bg-[#255dce]/5 text-[#255dce]">
                   N
                 </div>
               </div>
@@ -283,13 +283,13 @@ export default function Home() {
             </div>
 
             {/* Cloud Security */}
-            <div className="rounded-2xl border border-white/10 bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40">
+            <div className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40">
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-sm font-semibold tracking-[0.18em] text-cyan-400">
+                <span className="text-sm font-semibold tracking-[0.18em] text-[#255dce]">
                   02
                 </span>
 
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/20 bg-cyan-400/5 text-cyan-300">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#255dce]/20 bg-[#255dce]/5 text-[#255dce]">
                   C
                 </div>
               </div>
@@ -304,13 +304,13 @@ export default function Home() {
             </div>
 
             {/* Identity & Access */}
-            <div className="rounded-2xl border border-white/10 bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40">
+            <div className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40">
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-sm font-semibold tracking-[0.18em] text-cyan-400">
+                <span className="text-sm font-semibold tracking-[0.18em] text-[#255dce]">
                   03
                 </span>
 
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/20 bg-cyan-400/5 text-cyan-300">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#255dce]/20 bg-[#255dce]/5 text-[#255dce]">
                   I
                 </div>
               </div>
@@ -325,13 +325,13 @@ export default function Home() {
             </div>
 
             {/* Endpoint */}
-            <div className="rounded-2xl border border-white/10 bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40">
+            <div className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40">
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-sm font-semibold tracking-[0.18em] text-cyan-400">
+                <span className="text-sm font-semibold tracking-[0.18em] text-[#255dce]">
                   04
                 </span>
 
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/20 bg-cyan-400/5 text-cyan-300">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#255dce]/20 bg-[#255dce]/5 text-[#255dce]">
                   E
                 </div>
               </div>
@@ -347,13 +347,13 @@ export default function Home() {
             </div>
 
             {/* Data & Application */}
-            <div className="rounded-2xl border border-white/10 bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40">
+            <div className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40">
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-sm font-semibold tracking-[0.18em] text-cyan-400">
+                <span className="text-sm font-semibold tracking-[0.18em] text-[#255dce]">
                   05
                 </span>
 
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/20 bg-cyan-400/5 text-cyan-300">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#255dce]/20 bg-[#255dce]/5 text-[#255dce]">
                   D
                 </div>
               </div>
@@ -369,13 +369,13 @@ export default function Home() {
             </div>
 
             {/* Security Operations */}
-            <div className="rounded-2xl border border-white/10 bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40">
+            <div className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40">
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-sm font-semibold tracking-[0.18em] text-cyan-400">
+                <span className="text-sm font-semibold tracking-[0.18em] text-[#255dce]">
                   06
                 </span>
 
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/20 bg-cyan-400/5 text-cyan-300">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#255dce]/20 bg-[#255dce]/5 text-[#255dce]">
                   S
                 </div>
               </div>
@@ -397,13 +397,13 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-4xl">
-            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-cyan-400">
+            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-[#255dce]">
               SECURITY INTEGRATION
             </p>
 
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
               From Security Technologies to{" "}
-              <span className="text-cyan-400">
+              <span className="text-[#255dce]">
                 One Integrated Architecture
               </span>
             </h2>
@@ -433,8 +433,8 @@ export default function Home() {
                 "Evolve",
               ].map((step, index) => (
                 <div key={step} className="flex flex-1 items-center">
-                  <div className="min-w-[110px] rounded-xl border border-white/10 bg-white/[0.025] px-4 py-5 text-center transition duration-300 hover:border-cyan-400/40 hover:bg-cyan-400/[0.03]">
-                    <div className="text-xs tracking-[0.2em] text-cyan-400">
+                  <div className="min-w-[110px] rounded-xl border border-[#021861] bg-white/[0.025] px-4 py-5 text-center transition duration-300 hover:border-[#255dce]/40 hover:bg-[#255dce]/[0.03]">
+                    <div className="text-xs tracking-[0.2em] text-[#255dce]">
                       {String(index + 1).padStart(2, "0")}
                     </div>
 
@@ -444,7 +444,7 @@ export default function Home() {
                   </div>
 
                   {index < 7 && (
-                    <div className="mx-2 h-px flex-1 bg-gradient-to-r from-cyan-400/40 to-white/10" />
+                    <div className="mx-2 h-px flex-1 bg-gradient-to-r from-[#255dce]/40 to-white/10" />
                   )}
                 </div>
               ))}
@@ -453,7 +453,7 @@ export default function Home() {
 
           {/* Supporting copy */}
           <div className="mt-16 grid gap-10 lg:grid-cols-[1fr_1.1fr]">
-            <div className="rounded-2xl border border-cyan-400/10 bg-cyan-400/[0.025] p-8 lg:p-10">
+            <div className="rounded-2xl border border-[#255dce]/10 bg-[#255dce]/[0.025] p-8 lg:p-10">
               <h3 className="text-2xl font-semibold">
                 Integration that fits the enterprise
               </h3>
@@ -481,7 +481,7 @@ export default function Home() {
               ].map(([title, description]) => (
                 <div
                   key={title}
-                  className="rounded-xl border border-white/10 bg-[#0a0e14] p-5 transition duration-300 hover:border-cyan-400/35"
+                  className="rounded-xl border border-[#021861] bg-[#0a0e14] p-5 transition duration-300 hover:border-[#255dce]/35"
                 >
                   <h4 className="text-sm font-semibold text-white">{title}</h4>
 
@@ -497,17 +497,17 @@ export default function Home() {
             {/* AI & Cyber Intelligence */}
       <section className="relative overflow-hidden border-t border-white/10 bg-[#05070b] py-24">
         {/* Background effects */}
-        <div className="absolute left-1/2 top-1/2 h-[550px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/[0.06] blur-[140px]" />
+        <div className="absolute left-1/2 top-1/2 h-[550px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#255dce]/[0.06] blur-[140px]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-cyan-400">
+            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-[#255dce]">
               AI & CYBER INTELLIGENCE
             </p>
 
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
               AI-Powered Cybersecurity.{" "}
-              <span className="text-cyan-400">Human-Led Security.</span>
+              <span className="text-[#255dce]">Human-Led Security.</span>
             </h2>
 
             <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-white/55">
@@ -520,40 +520,40 @@ export default function Home() {
 
           {/* AI Core */}
           <div className="relative mx-auto mt-16 flex h-[340px] max-w-3xl items-center justify-center">
-            <div className="absolute h-[330px] w-[330px] rounded-full border border-cyan-400/10" />
-            <div className="absolute h-[250px] w-[250px] rounded-full border border-cyan-400/20" />
-            <div className="absolute h-[170px] w-[170px] rounded-full border border-cyan-400/30" />
+            <div className="absolute h-[330px] w-[330px] rounded-full border border-[#255dce]/10" />
+            <div className="absolute h-[250px] w-[250px] rounded-full border border-[#255dce]/20" />
+            <div className="absolute h-[170px] w-[170px] rounded-full border border-[#255dce]/30" />
 
-            <div className="relative flex h-32 w-32 items-center justify-center rounded-full border border-cyan-400/50 bg-[#07131a] shadow-[0_0_90px_rgba(34,211,238,0.18)]">
+            <div className="relative flex h-32 w-32 items-center justify-center rounded-full border border-[#255dce]/50 bg-[#07131a] shadow-[0_0_90px_rgba(34,211,238,0.18)]">
               <div className="text-center">
-                <div className="text-2xl font-semibold text-cyan-300">AI</div>
+                <div className="text-2xl font-semibold text-[#255dce]">AI</div>
                 <div className="mt-1 text-[9px] tracking-[0.2em] text-white/45">
                   INTELLIGENCE
                 </div>
               </div>
             </div>
 
-            <div className="absolute left-2 top-1/2 -translate-y-1/2 rounded-lg border border-white/10 bg-[#0a0e14] px-4 py-3 text-xs text-white/65">
+            <div className="absolute left-2 top-1/2 -translate-y-1/2 rounded-lg border border-[#021861] bg-[#0a0e14] px-4 py-3 text-xs text-white/65">
               HUMAN EXPERTISE
             </div>
 
-            <div className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg border border-white/10 bg-[#0a0e14] px-4 py-3 text-xs text-white/65">
+            <div className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg border border-[#021861] bg-[#0a0e14] px-4 py-3 text-xs text-white/65">
               AUTOMATION
             </div>
 
-            <div className="absolute left-1/2 top-1 -translate-x-1/2 rounded-lg border border-white/10 bg-[#0a0e14] px-4 py-3 text-xs text-white/65">
+            <div className="absolute left-1/2 top-1 -translate-x-1/2 rounded-lg border border-[#021861] bg-[#0a0e14] px-4 py-3 text-xs text-white/65">
               THREAT INTELLIGENCE
             </div>
 
-            <div className="absolute bottom-1 left-1/2 -translate-x-1/2 rounded-lg border border-white/10 bg-[#0a0e14] px-4 py-3 text-xs text-white/65">
+            <div className="absolute bottom-1 left-1/2 -translate-x-1/2 rounded-lg border border-[#021861] bg-[#0a0e14] px-4 py-3 text-xs text-white/65">
               SECURITY ANALYTICS
             </div>
           </div>
 
           {/* Three pillars */}
           <div className="mt-10 grid gap-5 md:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-8 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40">
-              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/[0.05] text-lg font-semibold text-cyan-300">
+            <div className="rounded-2xl border border-[#021861] bg-white/[0.025] p-8 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40">
+              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-xl border border-[#255dce]/20 bg-[#255dce]/[0.05] text-lg font-semibold text-[#255dce]">
                 01
               </div>
 
@@ -564,8 +564,8 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-8 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40">
-              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/[0.05] text-lg font-semibold text-cyan-300">
+            <div className="rounded-2xl border border-[#021861] bg-white/[0.025] p-8 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40">
+              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-xl border border-[#255dce]/20 bg-[#255dce]/[0.05] text-lg font-semibold text-[#255dce]">
                 02
               </div>
 
@@ -579,8 +579,8 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-8 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40">
-              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/[0.05] text-lg font-semibold text-cyan-300">
+            <div className="rounded-2xl border border-[#021861] bg-white/[0.025] p-8 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40">
+              <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-xl border border-[#255dce]/20 bg-[#255dce]/[0.05] text-lg font-semibold text-[#255dce]">
                 03
               </div>
 
@@ -594,7 +594,7 @@ export default function Home() {
           </div>
 
           {/* Human-led positioning */}
-          <div className="mt-12 rounded-2xl border border-cyan-400/15 bg-cyan-400/[0.025] p-8 text-center lg:p-10">
+          <div className="mt-12 rounded-2xl border border-[#255dce]/15 bg-[#255dce]/[0.025] p-8 text-center lg:p-10">
             <p className="mx-auto max-w-4xl text-lg leading-8 text-white/65">
               We don&apos;t position AI as a replacement for cybersecurity
               professionals. We use AI to augment human expertise, accelerate
@@ -607,13 +607,13 @@ export default function Home() {
       <section className="border-t border-white/10 bg-[#070a0f] py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-cyan-400">
+            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-[#255dce]">
               TECHNOLOGY ECOSYSTEM
             </p>
 
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
               An Open Ecosystem.{" "}
-              <span className="text-cyan-400">One Integrated Outcome.</span>
+              <span className="text-[#255dce]">One Integrated Outcome.</span>
             </h2>
 
             <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-white/55">
@@ -628,60 +628,60 @@ export default function Home() {
           {/* Ecosystem visual */}
           <div className="relative mx-auto mt-16 min-h-[520px] max-w-5xl">
             {/* Connection lines */}
-            <div className="absolute left-1/2 top-1/2 h-px w-[70%] -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
-            <div className="absolute left-1/2 top-1/2 h-[70%] w-px -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-transparent via-cyan-400/30 to-transparent" />
+            <div className="absolute left-1/2 top-1/2 h-px w-[70%] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#255dce]/30 to-transparent" />
+            <div className="absolute left-1/2 top-1/2 h-[70%] w-px -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-transparent via-[#255dce]/30 to-transparent" />
 
             {/* Center */}
-            <div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-cyan-400/50 bg-[#07131a] shadow-[0_0_90px_rgba(34,211,238,0.15)]">
+            <div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#255dce]/50 bg-[#07131a] shadow-[0_0_90px_rgba(34,211,238,0.15)]">
               <div className="text-center">
                 <div className="text-xl font-bold tracking-[0.14em]">
                   SECORVIX
                 </div>
-                <div className="mt-2 text-[9px] tracking-[0.2em] text-cyan-300">
+                <div className="mt-2 text-[9px] tracking-[0.2em] text-[#255dce]">
                   INTEGRATION ENGINE
                 </div>
               </div>
             </div>
 
             {/* Top */}
-            <div className="absolute left-1/2 top-2 -translate-x-1/2 rounded-xl border border-white/10 bg-[#0a0e14] px-6 py-4 text-center">
-              <div className="text-xs tracking-[0.2em] text-cyan-400">
+            <div className="absolute left-1/2 top-2 -translate-x-1/2 rounded-xl border border-[#021861] bg-[#0a0e14] px-6 py-4 text-center">
+              <div className="text-xs tracking-[0.2em] text-[#255dce]">
                 SECURITY PARTNERS
               </div>
             </div>
 
             {/* Left */}
-            <div className="absolute left-4 top-1/2 -translate-y-1/2 rounded-xl border border-white/10 bg-[#0a0e14] px-6 py-4 text-center">
-              <div className="text-xs tracking-[0.2em] text-cyan-400">
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 rounded-xl border border-[#021861] bg-[#0a0e14] px-6 py-4 text-center">
+              <div className="text-xs tracking-[0.2em] text-[#255dce]">
                 CLOUD
               </div>
             </div>
 
             {/* Right */}
-            <div className="absolute right-4 top-1/2 -translate-y-1/2 rounded-xl border border-white/10 bg-[#0a0e14] px-6 py-4 text-center">
-              <div className="text-xs tracking-[0.2em] text-cyan-400">
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 rounded-xl border border-[#021861] bg-[#0a0e14] px-6 py-4 text-center">
+              <div className="text-xs tracking-[0.2em] text-[#255dce]">
                 AI
               </div>
             </div>
 
             {/* Bottom row */}
             <div className="absolute bottom-6 left-1/2 grid w-full max-w-3xl -translate-x-1/2 grid-cols-3 gap-4">
-              <div className="rounded-xl border border-white/10 bg-[#0a0e14] px-5 py-4 text-center">
+              <div className="rounded-xl border border-[#021861] bg-[#0a0e14] px-5 py-4 text-center">
                 <div className="text-sm font-semibold text-white">Network</div>
               </div>
 
-              <div className="rounded-xl border border-white/10 bg-[#0a0e14] px-5 py-4 text-center">
+              <div className="rounded-xl border border-[#021861] bg-[#0a0e14] px-5 py-4 text-center">
                 <div className="text-sm font-semibold text-white">Identity</div>
               </div>
 
-              <div className="rounded-xl border border-white/10 bg-[#0a0e14] px-5 py-4 text-center">
+              <div className="rounded-xl border border-[#021861] bg-[#0a0e14] px-5 py-4 text-center">
                 <div className="text-sm font-semibold text-white">Data</div>
               </div>
             </div>
           </div>
 
           {/* Supporting copy */}
-          <div className="mt-8 rounded-2xl border border-cyan-400/10 bg-cyan-400/[0.025] p-8 text-center lg:p-10">
+          <div className="mt-8 rounded-2xl border border-[#255dce]/10 bg-[#255dce]/[0.025] p-8 text-center lg:p-10">
             <h3 className="text-2xl font-semibold">
               Technology-neutral. Outcome-driven.
             </h3>
@@ -694,7 +694,7 @@ export default function Home() {
 
             <a
               href="#ecosystem"
-              className="mt-8 inline-flex rounded-md border border-cyan-400/30 bg-cyan-400/[0.06] px-6 py-3 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-400 hover:text-black"
+              className="mt-8 inline-flex rounded-md border border-[#255dce]/30 bg-[#255dce]/[0.06] px-6 py-3 text-sm font-semibold text-[#255dce] transition hover:bg-[#255dce] hover:text-black"
             >
               Explore Our Ecosystem
             </a>
@@ -706,13 +706,13 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
-              <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-cyan-400">
+              <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-[#255dce]">
                 MANAGED SECURITY
               </p>
 
               <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
                 From Prevention to{" "}
-                <span className="text-cyan-400">Continuous Protection</span>
+                <span className="text-[#255dce]">Continuous Protection</span>
               </h2>
             </div>
 
@@ -766,14 +766,14 @@ export default function Home() {
             ].map(([title, description], index) => (
               <div
                 key={title}
-                className="group rounded-2xl border border-white/10 bg-[#0a0e14] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40"
+                className="group rounded-2xl border border-[#021861] bg-[#0a0e14] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold tracking-[0.2em] text-cyan-400">
+                  <span className="text-xs font-semibold tracking-[0.2em] text-[#255dce]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <div className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_16px_rgba(34,211,238,0.7)]" />
+                  <div className="h-2 w-2 rounded-full bg-[#255dce] shadow-[0_0_16px_rgba(34,211,238,0.7)]" />
                 </div>
 
                 <h3 className="mt-8 text-lg font-semibold text-white">
@@ -787,7 +787,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-12 flex flex-col items-start justify-between gap-6 rounded-2xl border border-cyan-400/10 bg-cyan-400/[0.025] p-8 md:flex-row md:items-center lg:p-10">
+          <div className="mt-12 flex flex-col items-start justify-between gap-6 rounded-2xl border border-[#255dce]/10 bg-[#255dce]/[0.025] p-8 md:flex-row md:items-center lg:p-10">
             <div>
               <h3 className="text-2xl font-semibold">
                 Strengthen your security operations
@@ -801,7 +801,7 @@ export default function Home() {
 
             <a
               href="/contact"
-              className="shrink-0 rounded-md bg-cyan-400 px-6 py-3 text-sm font-semibold text-black transition hover:bg-cyan-300"
+              className="shrink-0 rounded-md bg-[#255dce] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#255dce]/80"
             >
               Strengthen Your Security Operations
             </a>
@@ -812,13 +812,13 @@ export default function Home() {
       <section className="border-t border-white/10 bg-[#070a0f] py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-4xl">
-            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-cyan-400">
+            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-[#255dce]">
               CYBER RESILIENCE
             </p>
 
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
               Security Is Not Just About{" "}
-              <span className="text-cyan-400">Stopping Attacks</span>
+              <span className="text-[#255dce]">Stopping Attacks</span>
             </h2>
 
             <p className="mt-6 max-w-3xl text-base leading-8 text-white/55">
@@ -844,9 +844,9 @@ export default function Home() {
             ].map((step, index) => (
               <div
                 key={step}
-                className="relative rounded-2xl border border-white/10 bg-[#0a0e14] p-6 text-center transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40"
+                className="relative rounded-2xl border border-[#021861] bg-[#0a0e14] p-6 text-center transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40"
               >
-                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-400/[0.05] text-xs font-semibold text-cyan-300">
+                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-[#255dce]/30 bg-[#255dce]/[0.05] text-xs font-semibold text-[#255dce]">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
@@ -855,7 +855,7 @@ export default function Home() {
                 </h3>
 
                 {index < 5 && (
-                  <div className="absolute right-[-10px] top-1/2 hidden h-px w-5 bg-cyan-400/30 lg:block" />
+                  <div className="absolute right-[-10px] top-1/2 hidden h-px w-5 bg-[#255dce]/30 lg:block" />
                 )}
               </div>
             ))}
@@ -863,8 +863,8 @@ export default function Home() {
 
           {/* Resilience Services */}
           <div className="mt-16 grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-            <div className="rounded-2xl border border-cyan-400/10 bg-cyan-400/[0.025] p-8 lg:p-10">
-              <p className="text-xs font-semibold tracking-[0.25em] text-cyan-400">
+            <div className="rounded-2xl border border-[#255dce]/10 bg-[#255dce]/[0.025] p-8 lg:p-10">
+              <p className="text-xs font-semibold tracking-[0.25em] text-[#DE1110]">
                 RESILIENCE FRAMEWORK
               </p>
 
@@ -892,9 +892,9 @@ export default function Home() {
               ].map((service) => (
                 <div
                   key={service}
-                  className="flex items-center gap-4 rounded-xl border border-white/10 bg-[#0a0e14] p-5 transition duration-300 hover:border-cyan-400/35"
+                  className="flex items-center gap-4 rounded-xl border border-[#021861] bg-[#0a0e14] p-5 transition duration-300 hover:border-[#255dce]/35"
                 >
-                  <div className="h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(34,211,238,0.6)]" />
+                  <div className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#255dce] shadow-[0_0_14px_rgba(34,211,238,0.6)]" />
 
                   <span className="text-sm font-medium text-white/80">
                     {service}
@@ -911,13 +911,13 @@ export default function Home() {
           <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             {/* Left */}
             <div>
-              <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-cyan-400">
+              <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-[#255dce]">
                 ZERO TRUST
               </p>
 
               <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
                 Trust Nothing.{" "}
-                <span className="text-cyan-400">Verify Everything.</span>
+                <span className="text-[#255dce]">Verify Everything.</span>
               </h2>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-white/55">
@@ -933,42 +933,42 @@ export default function Home() {
 
             {/* Right visual */}
             <div className="relative flex min-h-[430px] items-center justify-center">
-              <div className="absolute h-[360px] w-[360px] rounded-full border border-cyan-400/10" />
-              <div className="absolute h-[280px] w-[280px] rounded-full border border-cyan-400/20" />
-              <div className="absolute h-[190px] w-[190px] rounded-full border border-cyan-400/30" />
+              <div className="absolute h-[360px] w-[360px] rounded-full border border-[#255dce]/10" />
+              <div className="absolute h-[280px] w-[280px] rounded-full border border-[#255dce]/20" />
+              <div className="absolute h-[190px] w-[190px] rounded-full border border-[#255dce]/30" />
 
-              <div className="relative z-10 flex h-32 w-32 items-center justify-center rounded-full border border-cyan-400/50 bg-[#07131a] shadow-[0_0_80px_rgba(34,211,238,0.18)]">
+              <div className="relative z-10 flex h-32 w-32 items-center justify-center rounded-full border border-[#255dce]/50 bg-[#07131a] shadow-[0_0_80px_rgba(34,211,238,0.18)]">
                 <div className="text-center">
                   <div className="text-lg font-bold tracking-[0.12em]">
                     ZERO TRUST
                   </div>
-                  <div className="mt-2 text-[9px] tracking-[0.18em] text-cyan-300">
+                  <div className="mt-2 text-[9px] tracking-[0.18em] text-[#255dce]">
                     CONTINUOUS VERIFY
                   </div>
                 </div>
               </div>
 
-              <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-lg border border-white/10 bg-[#0a0e14] px-4 py-3 text-xs text-white/70">
+              <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-lg border border-[#021861] bg-[#0a0e14] px-4 py-3 text-xs text-white/70">
                 Identity
               </div>
 
-              <div className="absolute right-4 top-1/3 rounded-lg border border-white/10 bg-[#0a0e14] px-4 py-3 text-xs text-white/70">
+              <div className="absolute right-4 top-1/3 rounded-lg border border-[#021861] bg-[#0a0e14] px-4 py-3 text-xs text-white/70">
                 Device
               </div>
 
-              <div className="absolute bottom-4 right-16 rounded-lg border border-white/10 bg-[#0a0e14] px-4 py-3 text-xs text-white/70">
+              <div className="absolute bottom-4 right-16 rounded-lg border border-[#021861] bg-[#0a0e14] px-4 py-3 text-xs text-white/70">
                 Application
               </div>
 
-              <div className="absolute bottom-4 left-16 rounded-lg border border-white/10 bg-[#0a0e14] px-4 py-3 text-xs text-white/70">
+              <div className="absolute bottom-4 left-16 rounded-lg border border-[#021861] bg-[#0a0e14] px-4 py-3 text-xs text-white/70">
                 Network
               </div>
 
-              <div className="absolute left-4 top-1/3 rounded-lg border border-white/10 bg-[#0a0e14] px-4 py-3 text-xs text-white/70">
+              <div className="absolute left-4 top-1/3 rounded-lg border border-[#021861] bg-[#0a0e14] px-4 py-3 text-xs text-white/70">
                 Data
               </div>
 
-              <div className="absolute left-1/2 bottom-0 -translate-x-1/2 rounded-lg border border-white/10 bg-[#0a0e14] px-4 py-3 text-xs text-white/70">
+              <div className="absolute left-1/2 bottom-0 -translate-x-1/2 rounded-lg border border-[#021861] bg-[#0a0e14] px-4 py-3 text-xs text-white/70">
                 Context
               </div>
             </div>
@@ -985,9 +985,9 @@ export default function Home() {
             ].map((item, index) => (
               <div
                 key={item}
-                className="rounded-xl border border-white/10 bg-[#0a0e14] p-5 text-center transition duration-300 hover:border-cyan-400/40"
+                className="rounded-xl border border-[#021861] bg-[#0a0e14] p-5 text-center transition duration-300 hover:border-[#255dce]/40"
               >
-                <div className="text-xs font-semibold tracking-[0.2em] text-cyan-400">
+                <div className="text-xs font-semibold tracking-[0.2em] text-[#255dce]">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
@@ -1003,13 +1003,13 @@ export default function Home() {
       <section className="border-t border-white/10 bg-[#070a0f] py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-4xl">
-            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-cyan-400">
+            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-[#255dce]">
               OUR APPROACH
             </p>
 
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
               A Structured Path from Complexity to{" "}
-              <span className="text-cyan-400">Cyber Confidence</span>
+              <span className="text-[#255dce]">Cyber Confidence</span>
             </h2>
           </div>
 
@@ -1046,16 +1046,16 @@ export default function Home() {
             ].map(([title, description], index) => (
               <div
                 key={title}
-                className={`rounded-2xl border border-white/10 bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 ${
+                className={`rounded-2xl border border-[#021861] bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40 ${
                   index === 6 ? "lg:col-span-2" : ""
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold tracking-[0.2em] text-cyan-400">
+                  <span className="text-xs font-semibold tracking-[0.2em] text-[#255dce]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <div className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(34,211,238,0.6)]" />
+                  <div className="h-2 w-2 rounded-full bg-[#255dce] shadow-[0_0_14px_rgba(34,211,238,0.6)]" />
                 </div>
 
                 <h3 className="mt-8 text-xl font-semibold text-white">
@@ -1078,13 +1078,13 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
-              <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-cyan-400">
+              <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-[#255dce]">
                 INDUSTRIES
               </p>
 
               <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
                 Cybersecurity Designed Around{" "}
-                <span className="text-cyan-400">Your Industry</span>
+                <span className="text-[#255dce]">Your Industry</span>
               </h2>
             </div>
 
@@ -1129,16 +1129,16 @@ export default function Home() {
             ].map(([title, description], index) => (
               <div
                 key={title}
-                className={`group rounded-2xl border border-white/10 bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 ${
+                className={`group rounded-2xl border border-[#021861] bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40 ${
                   index === 6 ? "lg:col-span-3" : ""
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold tracking-[0.2em] text-cyan-400">
+                  <span className="text-xs font-semibold tracking-[0.2em] text-[#255dce]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <div className="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(34,211,238,0.6)]" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#255dce] shadow-[0_0_14px_rgba(34,211,238,0.6)]" />
                 </div>
 
                 <h3 className="mt-8 text-xl font-semibold text-white">
@@ -1157,13 +1157,13 @@ export default function Home() {
       <section className="border-t border-white/10 bg-[#070a0f] py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-4xl">
-            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-cyan-400">
+            <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-[#255dce]">
               WHY SECORVIX
             </p>
 
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
               What Makes{" "}
-              <span className="text-cyan-400">SECORVIX Different?</span>
+              <span className="text-[#255dce]">SECORVIX Different?</span>
             </h2>
           </div>
 
@@ -1196,14 +1196,14 @@ export default function Home() {
             ].map(([title, description], index) => (
               <div
                 key={title}
-                className="rounded-2xl border border-white/10 bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40"
+                className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold tracking-[0.2em] text-cyan-400">
+                  <span className="text-xs font-semibold tracking-[0.2em] text-[#255dce]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <div className="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_14px_rgba(34,211,238,0.6)]" />
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#255dce] shadow-[0_0_14px_rgba(34,211,238,0.6)]" />
                 </div>
 
                 <h3 className="mt-8 text-xl font-semibold text-white">
@@ -1218,10 +1218,10 @@ export default function Home() {
           </div>
 
           {/* Challenge / Advantage */}
-          <div className="mt-16 rounded-2xl border border-cyan-400/10 bg-cyan-400/[0.025] p-8 lg:p-10">
+          <div className="mt-16 rounded-2xl border border-[#255dce]/10 bg-[#255dce]/[0.025] p-8 lg:p-10">
             <div className="grid gap-10 lg:grid-cols-2">
               <div>
-                <p className="text-xs font-semibold tracking-[0.25em] text-cyan-400">
+                <p className="text-xs font-semibold tracking-[0.25em] text-[#DE1110]">
                   THE CHALLENGE
                 </p>
 
@@ -1237,7 +1237,7 @@ export default function Home() {
               </div>
 
               <div>
-                <p className="text-xs font-semibold tracking-[0.25em] text-cyan-400">
+                <p className="text-xs font-semibold tracking-[0.25em] text-[#DE1110]">
                   THE SECORVIX ADVANTAGE
                 </p>
 
@@ -1263,13 +1263,13 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-cyan-400">
+              <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-[#255dce]">
                 ABOUT SECORVIX
               </p>
 
               <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
                 Building the Security Infrastructure for a{" "}
-                <span className="text-cyan-400">Connected World</span>
+                <span className="text-[#255dce]">Connected World</span>
               </h2>
             </div>
 
@@ -1301,8 +1301,8 @@ export default function Home() {
 
           {/* Vision / Mission / Purpose / Promise */}
           <div className="mt-16 grid gap-5 md:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-[#0a0e14] p-8 transition duration-300 hover:border-cyan-400/40">
-              <p className="text-xs font-semibold tracking-[0.22em] text-cyan-400">
+            <div className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-8 transition duration-300 hover:border-[#255dce]/40">
+              <p className="text-xs font-semibold tracking-[0.22em] text-[#255dce]">
                 VISION
               </p>
 
@@ -1312,8 +1312,8 @@ export default function Home() {
               </h3>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#0a0e14] p-8 transition duration-300 hover:border-cyan-400/40">
-              <p className="text-xs font-semibold tracking-[0.22em] text-cyan-400">
+            <div className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-8 transition duration-300 hover:border-[#255dce]/40">
+              <p className="text-xs font-semibold tracking-[0.22em] text-[#255dce]">
                 MISSION
               </p>
 
@@ -1323,8 +1323,8 @@ export default function Home() {
               </h3>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#0a0e14] p-8 transition duration-300 hover:border-cyan-400/40">
-              <p className="text-xs font-semibold tracking-[0.22em] text-cyan-400">
+            <div className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-8 transition duration-300 hover:border-[#255dce]/40">
+              <p className="text-xs font-semibold tracking-[0.22em] text-[#255dce]">
                 PURPOSE
               </p>
 
@@ -1334,8 +1334,8 @@ export default function Home() {
               </h3>
             </div>
 
-            <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.03] p-8">
-              <p className="text-xs font-semibold tracking-[0.22em] text-cyan-400">
+            <div className="rounded-2xl border border-[#255dce]/20 bg-[#255dce]/[0.03] p-8">
+              <p className="text-xs font-semibold tracking-[0.22em] text-[#255dce]">
                 PROMISE
               </p>
 
@@ -1353,17 +1353,17 @@ export default function Home() {
         className="border-t border-white/10 bg-[#070a0f] py-24"
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-[#081118] px-8 py-16 text-center lg:px-16 lg:py-20">
-            <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/[0.08] blur-[120px]" />
+          <div className="relative overflow-hidden rounded-3xl border border-[#255dce]/20 bg-[#081118] px-8 py-16 text-center lg:px-16 lg:py-20">
+            <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#255dce]/[0.08] blur-[120px]" />
 
             <div className="relative">
-              <p className="text-xs font-semibold tracking-[0.3em] text-cyan-400">
+              <p className="text-xs font-semibold tracking-[0.3em] text-[#255dce]">
                 LET&apos;S BUILD CYBER RESILIENCE
               </p>
 
               <h2 className="mx-auto mt-5 max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
                 Ready to Strengthen{" "}
-                <span className="text-cyan-400">Your Cybersecurity?</span>
+                <span className="text-[#255dce]">Your Cybersecurity?</span>
               </h2>
 
               <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-white/55">
@@ -1380,14 +1380,14 @@ export default function Home() {
               <div className="mt-10 flex flex-wrap justify-center gap-4">
                 <a
                   href="/contact"
-                  className="rounded-md bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-cyan-300"
+                  className="rounded-md bg-[#255dce] px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-[#255dce]/80"
                 >
                   Talk to Our Cybersecurity Experts
                 </a>
 
                 <a
                   href="/contact"
-                  className="rounded-md border border-white/15 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-cyan-400/50 hover:text-cyan-300"
+                  className="rounded-md border border-white/15 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-[#255dce]/50 hover:text-[#255dce]"
                 >
                   Request a Security Assessment
                 </a>
@@ -1418,42 +1418,42 @@ export default function Home() {
             </div>
 
             <div>
-              <p className="text-xs font-semibold tracking-[0.22em] text-cyan-400">
+              <p className="text-xs font-semibold tracking-[0.22em] text-[#255dce]">
                 QUICK LINKS
               </p>
 
               <div className="mt-5 flex flex-col gap-3 text-sm text-white/50">
-                <a href="/about" className="transition hover:text-cyan-300">
+                <a href="/about" className="transition hover:text-[#255dce]">
                   About
                 </a>
-                <a href="/solutions" className="transition hover:text-cyan-300">
+                <a href="/solutions" className="transition hover:text-[#255dce]">
                   Solutions
                 </a>
-                <a href="/security-integration" className="transition hover:text-cyan-300">
+                <a href="/security-integration" className="transition hover:text-[#255dce]">
                   Services
                 </a>
-               <a href="/industries" className="transition hover:text-cyan-300">
+               <a href="/industries" className="transition hover:text-[#255dce]">
   Industries
 </a>
-                <a href="/contact" className="transition hover:text-cyan-300">
+                <a href="/contact" className="transition hover:text-[#255dce]">
                   Contact
                 </a>
               </div>
             </div>
 
             <div>
-              <p className="text-xs font-semibold tracking-[0.22em] text-cyan-400">
+              <p className="text-xs font-semibold tracking-[0.22em] text-[#255dce]">
                 CONNECT
               </p>
 
               <div className="mt-5 flex flex-col gap-3 text-sm text-white/50">
-                <a href="#" className="transition hover:text-cyan-300">
+                <a href="#" className="transition hover:text-[#255dce]">
                   LinkedIn
                 </a>
-                <a href="#" className="transition hover:text-cyan-300">
+                <a href="#" className="transition hover:text-[#255dce]">
                   Careers
                 </a>
-                <a href="/contact" className="transition hover:text-cyan-300">
+                <a href="/contact" className="transition hover:text-[#255dce]">
                   Contact
                 </a>
               </div>

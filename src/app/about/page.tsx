@@ -8,13 +8,13 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-cyan-400">
+          <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-[#255dce]">
             ABOUT SECORVIX
           </p>
 
           <h1 className="max-w-4xl text-5xl font-semibold tracking-tight sm:text-6xl">
             Building the Security Infrastructure for a{" "}
-            <span className="text-cyan-400">Connected World</span>
+            <span className="text-[#255dce]">Connected World</span>
           </h1>
 
           <p className="mt-8 max-w-3xl text-lg leading-8 text-white/55">
@@ -30,7 +30,7 @@ export default function AboutPage() {
       <section className="border-b border-white/10 bg-[#070a0f] py-24">
         <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <p className="text-xs font-semibold tracking-[0.3em] text-cyan-400">
+            <p className="text-xs font-semibold tracking-[0.3em] text-[#255dce]">
               WHO WE ARE
             </p>
 
@@ -68,13 +68,13 @@ export default function AboutPage() {
       {/* Six Principles */}
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <p className="text-xs font-semibold tracking-[0.3em] text-cyan-400">
+          <p className="text-xs font-semibold tracking-[0.3em] text-[#255dce]">
             BRAND PHILOSOPHY
           </p>
 
           <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
             One Name.{" "}
-            <span className="text-cyan-400">
+            <span className="text-[#255dce]">
               Six Cybersecurity Principles.
             </span>
           </h2>
@@ -90,9 +90,9 @@ export default function AboutPage() {
             ].map(([letter, title, description]) => (
               <div
                 key={title}
-                className="rounded-2xl border border-white/10 bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40"
+                className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40"
               >
-                <div className="text-4xl font-semibold text-cyan-400">
+                <div className="text-4xl font-semibold text-[#255dce]">
                   {letter}
                 </div>
 
@@ -111,8 +111,8 @@ export default function AboutPage() {
       <section className="border-t border-white/10 bg-[#070a0f] py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-[#0a0e14] p-8">
-              <p className="text-xs font-semibold tracking-[0.22em] text-cyan-400">
+            <div className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-8">
+              <p className="text-xs font-semibold tracking-[0.22em] text-[#255dce]">
                 VISION
               </p>
 
@@ -122,8 +122,8 @@ export default function AboutPage() {
               </h3>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#0a0e14] p-8">
-              <p className="text-xs font-semibold tracking-[0.22em] text-cyan-400">
+            <div className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-8">
+              <p className="text-xs font-semibold tracking-[0.22em] text-[#255dce]">
                 MISSION
               </p>
 
@@ -133,8 +133,8 @@ export default function AboutPage() {
               </h3>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#0a0e14] p-8">
-              <p className="text-xs font-semibold tracking-[0.22em] text-cyan-400">
+            <div className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-8">
+              <p className="text-xs font-semibold tracking-[0.22em] text-[#255dce]">
                 PURPOSE
               </p>
 
@@ -144,8 +144,8 @@ export default function AboutPage() {
               </h3>
             </div>
 
-            <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/[0.03] p-8">
-              <p className="text-xs font-semibold tracking-[0.22em] text-cyan-400">
+            <div className="rounded-2xl border border-[#255dce]/20 bg-[#255dce]/[0.03] p-8">
+              <p className="text-xs font-semibold tracking-[0.22em] text-[#255dce]">
                 PROMISE
               </p>
 

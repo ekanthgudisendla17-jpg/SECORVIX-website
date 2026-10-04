@@ -66,7 +66,7 @@ export default function SolutionsPage() {
             ].map(([number, title, description]) => (
               <div
                 key={title}
-                className="rounded-2xl border border-white/10 bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40"
+                className="rounded-2xl border border-[#021861] bg-[#0a0e14] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#255dce]/40"
               >
                 <div className="text-xs font-semibold tracking-[0.2em] text-cyan-400">
                   {number}
@@ -86,7 +86,7 @@ export default function SolutionsPage() {
       {/* Supporting Positioning */}
       <section className="border-t border-white/10 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="rounded-3xl border border-cyan-400/15 bg-cyan-400/[0.025] p-8 lg:p-12">
+          <div className="rounded-3xl border border-[#255dce]/15 bg-[#255dce]/[0.025] p-8 lg:p-12">
             <p className="text-xs font-semibold tracking-[0.3em] text-cyan-400">
               INTEGRATED SECURITY
             </p>

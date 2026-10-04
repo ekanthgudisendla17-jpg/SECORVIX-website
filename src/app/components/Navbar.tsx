@@ -12,8 +12,8 @@ export default function Navbar() {
     pathname === "/ai-cyber-intelligence" ||
     pathname === "/cyber-resilience";
 
-  const normalLink = "transition hover:text-cyan-400";
-  const activeLink = "text-cyan-400";
+  const normalLink = "transition hover:text-[#255dce]";
+  const activeLink = "text-[#255dce]";
 
   return (
     <header className="relative z-50 border-b border-white/10 bg-[#05070b]">
@@ -50,8 +50,8 @@ export default function Navbar() {
               type="button"
               className={
                 isSolutionsPage
-                  ? "flex items-center gap-1 text-cyan-400"
-                  : "flex items-center gap-1 transition hover:text-cyan-400"
+                  ? "flex items-center gap-1 text-[#255dce]"
+                  : "flex items-center gap-1 transition hover:text-[#255dce]"
               }
             >
               Solutions
@@ -64,8 +64,8 @@ export default function Navbar() {
                 href="/solutions"
                 className={
                   pathname === "/solutions"
-                    ? "block rounded-lg bg-white/5 px-4 py-3 text-cyan-400"
-                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-cyan-400"
+                    ? "block rounded-lg bg-white/5 px-4 py-3 text-[#255dce]"
+                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-[#255dce]"
                 }
               >
                 Cybersecurity Solutions
@@ -75,8 +75,8 @@ export default function Navbar() {
                 href="/security-integration"
                 className={
                   pathname === "/security-integration"
-                    ? "block rounded-lg bg-white/5 px-4 py-3 text-cyan-400"
-                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-cyan-400"
+                    ? "block rounded-lg bg-white/5 px-4 py-3 text-[#255dce]"
+                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-[#255dce]"
                 }
               >
                 Security Integration
@@ -86,8 +86,8 @@ export default function Navbar() {
                 href="/managed-security"
                 className={
                   pathname === "/managed-security"
-                    ? "block rounded-lg bg-white/5 px-4 py-3 text-cyan-400"
-                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-cyan-400"
+                    ? "block rounded-lg bg-white/5 px-4 py-3 text-[#255dce]"
+                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-[#255dce]"
                 }
               >
                 Managed Security
@@ -97,8 +97,8 @@ export default function Navbar() {
                 href="/ai-cyber-intelligence"
                 className={
                   pathname === "/ai-cyber-intelligence"
-                    ? "block rounded-lg bg-white/5 px-4 py-3 text-cyan-400"
-                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-cyan-400"
+                    ? "block rounded-lg bg-white/5 px-4 py-3 text-[#255dce]"
+                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-[#255dce]"
                 }
               >
                 AI & Cyber Intelligence
@@ -108,8 +108,8 @@ export default function Navbar() {
                 href="/cyber-resilience"
                 className={
                   pathname === "/cyber-resilience"
-                    ? "block rounded-lg bg-white/5 px-4 py-3 text-cyan-400"
-                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-cyan-400"
+                    ? "block rounded-lg bg-white/5 px-4 py-3 text-[#255dce]"
+                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-[#255dce]"
                 }
               >
                 Cyber Resilience
@@ -137,7 +137,7 @@ export default function Navbar() {
         {/* DESKTOP BUTTON */}
         <a
           href="/contact"
-          className="hidden rounded-md border border-cyan-500/60 px-5 py-2 text-sm font-semibold text-cyan-400 transition hover:bg-cyan-400 hover:text-black md:block"
+          className="hidden rounded-md border border-[#255dce]/60 px-5 py-2 text-sm font-semibold text-[#255dce] transition hover:bg-[#255dce] hover:text-black md:block"
         >
           Talk to an Expert
         </a>
@@ -173,8 +173,8 @@ export default function Navbar() {
                 <summary
                   className={
                     isSolutionsPage
-                      ? "cursor-pointer list-none text-cyan-400"
-                      : "cursor-pointer list-none transition hover:text-cyan-400"
+                      ? "cursor-pointer list-none text-[#255dce]"
+                      : "cursor-pointer list-none transition hover:text-[#255dce]"
                   }
                 >
                   Solutions ▼
@@ -264,7 +264,7 @@ export default function Navbar() {
 
               <a
                 href="/contact"
-                className="mt-2 rounded-md border border-cyan-500/60 px-4 py-3 text-center font-semibold text-cyan-400"
+                className="mt-2 rounded-md border border-[#255dce]/60 px-4 py-3 text-center font-semibold text-[#255dce]"
               >
                 Talk to an Expert
               </a>
