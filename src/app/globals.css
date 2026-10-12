@@ -2,13 +2,13 @@
 
 :root {
   --secorvix-navy: #021861;
-  --secorvix-blue: #255dce;
+  --secorvix-blue: #9292F0;
   --secorvix-red: #de1110;
 
-  --background: #05070b;
-  --surface: #0a0e14;
+  --background: #9292F0;
+  --surface: #021861;
   --foreground: #ffffff;
-  --muted: #9ca3af;
+  --muted: rgba(255,255,255,0.75);
 }
 
 @theme inline {

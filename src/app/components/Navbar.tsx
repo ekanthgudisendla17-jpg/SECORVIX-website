@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -12,37 +13,37 @@ export default function Navbar() {
     pathname === "/ai-cyber-intelligence" ||
     pathname === "/cyber-resilience";
 
-  const normalLink = "transition hover:text-[#255dce]";
-  const activeLink = "text-[#255dce]";
+  const normalLink = "py-2 text-white/75 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
+  const activeLink = "py-2 text-white underline decoration-[#DE1110] decoration-1 underline-offset-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white";
 
   return (
-    <header className="relative z-50 border-b border-white/10 bg-[#05070b]">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <header className="relative z-50 border-b border-[#9292F0]/30 bg-[#021861] text-white">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-5 lg:px-8 lg:py-6">
 
         {/* LOGO */}
-        <a
+        <Link
           href="/"
           className="text-xl font-semibold tracking-[0.25em] text-white"
         >
           SECORVIX
-        </a>
+        </Link>
 
         {/* DESKTOP NAVIGATION */}
-        <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
+        <nav className="hidden items-center gap-7 text-sm text-white/75 xl:flex">
 
-          <a
+          <Link
             href="/"
             className={pathname === "/" ? activeLink : normalLink}
           >
             Home
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="/about"
             className={pathname === "/about" ? activeLink : normalLink}
           >
             About
-          </a>
+          </Link>
 
           {/* DESKTOP SOLUTIONS DROPDOWN */}
           <div className="group relative">
@@ -50,131 +51,131 @@ export default function Navbar() {
               type="button"
               className={
                 isSolutionsPage
-                  ? "flex items-center gap-1 text-[#255dce]"
-                  : "flex items-center gap-1 transition hover:text-[#255dce]"
+                  ? "flex items-center gap-1 py-2 text-white underline decoration-[#DE1110] decoration-1 underline-offset-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                  : "flex items-center gap-1 py-2 text-white/75 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               }
             >
               Solutions
               <span className="text-[10px]">▼</span>
             </button>
 
-            <div className="invisible absolute left-0 top-full z-[100] mt-4 w-64 rounded-xl border border-white/10 bg-[#0a0e14] p-3 opacity-0 shadow-2xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
+            <div className="invisible absolute left-0 top-full z-[100] mt-0 w-72 border border-[#9292F0]/40 bg-[#021861] p-3 opacity-0 shadow-2xl transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
 
-              <a
+              <Link
                 href="/solutions"
                 className={
                   pathname === "/solutions"
-                    ? "block rounded-lg bg-white/5 px-4 py-3 text-[#255dce]"
-                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-[#255dce]"
+                    ? "block bg-white/5 px-4 py-3 text-[#9292F0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9292F0]"
+                    : "block px-4 py-3 transition hover:bg-white/5 hover:text-[#9292F0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9292F0]"
                 }
               >
                 Cybersecurity Solutions
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/security-integration"
                 className={
                   pathname === "/security-integration"
-                    ? "block rounded-lg bg-white/5 px-4 py-3 text-[#255dce]"
-                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-[#255dce]"
+                    ? "block bg-white/5 px-4 py-3 text-[#9292F0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9292F0]"
+                    : "block px-4 py-3 transition hover:bg-white/5 hover:text-[#9292F0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9292F0]"
                 }
               >
                 Security Integration
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/managed-security"
                 className={
                   pathname === "/managed-security"
-                    ? "block rounded-lg bg-white/5 px-4 py-3 text-[#255dce]"
-                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-[#255dce]"
+                    ? "block bg-white/5 px-4 py-3 text-[#9292F0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9292F0]"
+                    : "block px-4 py-3 transition hover:bg-white/5 hover:text-[#9292F0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9292F0]"
                 }
               >
                 Managed Security
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/ai-cyber-intelligence"
                 className={
                   pathname === "/ai-cyber-intelligence"
-                    ? "block rounded-lg bg-white/5 px-4 py-3 text-[#255dce]"
-                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-[#255dce]"
+                    ? "block bg-white/5 px-4 py-3 text-[#9292F0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9292F0]"
+                    : "block px-4 py-3 transition hover:bg-white/5 hover:text-[#9292F0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9292F0]"
                 }
               >
                 AI & Cyber Intelligence
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/cyber-resilience"
                 className={
                   pathname === "/cyber-resilience"
-                    ? "block rounded-lg bg-white/5 px-4 py-3 text-[#255dce]"
-                    : "block rounded-lg px-4 py-3 transition hover:bg-white/5 hover:text-[#255dce]"
+                    ? "block bg-white/5 px-4 py-3 text-[#9292F0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9292F0]"
+                    : "block px-4 py-3 transition hover:bg-white/5 hover:text-[#9292F0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9292F0]"
                 }
               >
                 Cyber Resilience
-              </a>
+              </Link>
 
             </div>
           </div>
 
-          <a
+          <Link
             href="/industries"
             className={pathname === "/industries" ? activeLink : normalLink}
           >
             Industries
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="/contact"
             className={pathname === "/contact" ? activeLink : normalLink}
           >
             Contact
-          </a>
+          </Link>
 
         </nav>
 
         {/* DESKTOP BUTTON */}
-        <a
+        <Link
           href="/contact"
-          className="hidden rounded-md border border-[#255dce]/60 px-5 py-2 text-sm font-semibold text-[#255dce] transition hover:bg-[#255dce] hover:text-black md:block"
+          className="hidden min-h-12 items-center justify-center border border-white/50 bg-[#021861] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#9292F0] hover:text-[#021861] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white xl:flex"
         >
           Talk to an Expert
-        </a>
+        </Link>
 
         {/* MOBILE NAVIGATION */}
-        <details className="relative md:hidden">
+        <details className="relative xl:hidden">
           <summary
-            className="cursor-pointer list-none text-3xl text-white"
+            className="flex min-h-11 min-w-11 cursor-pointer list-none items-center justify-center text-3xl text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             aria-label="Open navigation menu"
           >
             ☰
           </summary>
 
-          <div className="absolute right-0 top-full z-[100] mt-4 w-[280px] rounded-xl border border-white/10 bg-[#070a0f] p-5 shadow-2xl">
-            <nav className="flex flex-col gap-4 text-sm text-white/70">
+          <div className="absolute right-0 top-full z-[100] mt-4 w-[280px] max-w-[calc(100vw-3rem)] border border-[#9292F0]/40 bg-[#021861] p-5 shadow-2xl">
+            <nav className="flex flex-col gap-4 text-sm text-white/75">
 
-              <a
+              <Link
                 href="/"
                 className={pathname === "/" ? activeLink : normalLink}
               >
                 Home
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/about"
                 className={pathname === "/about" ? activeLink : normalLink}
               >
                 About
-              </a>
+              </Link>
 
               {/* MOBILE SOLUTIONS DROPDOWN */}
               <details>
                 <summary
                   className={
                     isSolutionsPage
-                      ? "cursor-pointer list-none text-[#255dce]"
-                      : "cursor-pointer list-none transition hover:text-[#255dce]"
+                      ? "cursor-pointer list-none text-[#9292F0]"
+                      : "cursor-pointer list-none transition hover:text-[#9292F0]"
                   }
                 >
                   Solutions ▼
@@ -182,7 +183,7 @@ export default function Navbar() {
 
                 <div className="mt-3 ml-3 flex flex-col gap-3 border-l border-white/10 pl-4">
 
-                  <a
+                  <Link
                     href="/solutions"
                     className={
                       pathname === "/solutions"
@@ -191,9 +192,9 @@ export default function Navbar() {
                     }
                   >
                     Cybersecurity Solutions
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href="/security-integration"
                     className={
                       pathname === "/security-integration"
@@ -202,9 +203,9 @@ export default function Navbar() {
                     }
                   >
                     Security Integration
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href="/managed-security"
                     className={
                       pathname === "/managed-security"
@@ -213,9 +214,9 @@ export default function Navbar() {
                     }
                   >
                     Managed Security
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href="/ai-cyber-intelligence"
                     className={
                       pathname === "/ai-cyber-intelligence"
@@ -224,9 +225,9 @@ export default function Navbar() {
                     }
                   >
                     AI & Cyber Intelligence
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                     href="/cyber-resilience"
                     className={
                       pathname === "/cyber-resilience"
@@ -235,12 +236,12 @@ export default function Navbar() {
                     }
                   >
                     Cyber Resilience
-                  </a>
+                  </Link>
 
                 </div>
               </details>
 
-              <a
+              <Link
                 href="/industries"
                 className={
                   pathname === "/industries"
@@ -249,9 +250,9 @@ export default function Navbar() {
                 }
               >
                 Industries
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/contact"
                 className={
                   pathname === "/contact"
@@ -260,14 +261,14 @@ export default function Navbar() {
                 }
               >
                 Contact
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/contact"
-                className="mt-2 rounded-md border border-[#255dce]/60 px-4 py-3 text-center font-semibold text-[#255dce]"
+                className="mt-2 border border-[#9292F0]/60 px-4 py-3 text-center font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 Talk to an Expert
-              </a>
+              </Link>
 
             </nav>
           </div>
