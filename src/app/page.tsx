@@ -13,10 +13,10 @@ export default function Home() {
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(2,24,97,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(2,24,97,0.12)_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:linear-gradient(to_right,transparent,black)]" />
         <div aria-hidden="true" className="pointer-events-none absolute -right-32 top-20 -z-10 hidden h-[600px] w-[480px] rotate-12 border border-[#021861]/25 bg-[#021861]/10 lg:block" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:gap-16 sm:px-6 sm:py-20 lg:min-h-[860px] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-10 lg:px-10 lg:py-28 xl:gap-12 xl:px-12">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:gap-16 sm:px-6 sm:py-20 lg:min-h-0 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-10 lg:px-10 lg:py-[clamp(3rem,7vh,5rem)] xl:gap-12 xl:px-12">
           {/* Left side */}
           <div>
-            <div className="mb-8 inline-flex items-center border-l-2 border-[#DE1110] pl-4 text-[10px] font-semibold tracking-[0.16em] text-[#021861] sm:text-xs sm:tracking-[0.2em]">
+            <div className="mb-8 inline-flex items-center border-l-2 border-[#DE1110] pl-4 text-[10px] font-semibold tracking-[0.16em] text-[#021861] sm:text-xs sm:tracking-[0.2em] lg:mb-6">
               CYBERSECURITY • INTEGRATION • AI
             </div>
 
@@ -25,19 +25,19 @@ export default function Home() {
               <span className="mt-2 block text-white">Digital Enterprise</span>
             </h1>
 
-            <p className="mt-8 max-w-xl text-base leading-8 text-[#021861] sm:text-lg">
+            <p className="mt-8 max-w-xl text-base leading-8 text-[#021861] max-sm:leading-7 sm:text-lg">
               SECORVIX brings together cybersecurity, system integration,
               intelligence and AI to help organizations secure, connect and
               continuously protect their digital environments.
             </p>
 
-            <p className="mt-5 max-w-xl text-sm leading-7 text-[#021861] sm:text-base">
+            <p className="mt-5 max-w-xl text-sm leading-7 text-[#021861] max-sm:mt-3 max-sm:leading-6 sm:text-base">
               From security architecture and technology integration to managed
               detection and response, we help enterprises move from fragmented
               security to unified cyber resilience.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap lg:mt-12">
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap lg:mt-8">
               <a
                 href="/contact"
                 className="inline-flex min-h-14 items-center justify-center rounded-md border border-white/25 bg-[#021861] px-7 py-4 text-center text-sm font-semibold text-white shadow-[0_12px_32px_rgba(2,24,97,0.25)] transition-colors hover:bg-[#021861]/80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
@@ -55,7 +55,7 @@ export default function Home() {
           </div>
 
           {/* Original layered security architecture */}
-          <div className="relative mx-auto aspect-square w-full min-w-0 max-w-[520px] lg:max-w-none">
+          <div className="relative mx-auto aspect-square w-full min-w-0 max-w-[520px] lg:mt-8 lg:max-w-[480px] lg:self-start">
             {/* Decorative geometry stays inside the responsive canvas */}
             <div aria-hidden="true" className="pointer-events-none absolute inset-0">
               <div className="absolute inset-[9%] rotate-[-12deg] border border-[#021861]/35 bg-[#021861]/10" />
@@ -118,7 +118,7 @@ export default function Home() {
 
           <div className="mt-12 grid grid-cols-1 gap-x-12 sm:mt-16 lg:grid-cols-2 lg:gap-x-16">
             {/* Security */}
-            <div className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-5 border-t border-[#021861]/60 py-8 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-7 sm:py-10 lg:py-12">
+            <div className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-5 border-t border-[#021861]/60 py-8 max-sm:gap-4 max-sm:py-7 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-7 sm:py-10 lg:py-12">
               <span aria-hidden="true" className="select-none text-[4.5rem] font-semibold leading-[0.85] tracking-[-0.06em] text-[#021861] sm:text-[7rem]">S</span>
               <div className="min-w-0">
                 <div className="mb-4 flex items-center gap-2">
@@ -126,14 +126,14 @@ export default function Home() {
                   <span className="text-xs font-medium tracking-[0.2em] text-[#021861]">01</span>
                 </div>
                 <h3 className="text-xl font-semibold leading-tight tracking-tight text-white sm:text-2xl text-balance [overflow-wrap:break-word]">Security</h3>
-                <p className="mt-4 max-w-md text-base leading-7 text-[#021861]">
+                <p className="mt-4 max-w-md text-base leading-7 text-[#021861] max-sm:mt-3">
                 Protecting digital assets, infrastructure, identities and data.
               </p>
               </div>
             </div>
 
             {/* Orchestration */}
-            <div className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-5 border-t border-[#021861]/60 py-8 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-7 sm:py-10 lg:py-12">
+            <div className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-5 border-t border-[#021861]/60 py-8 max-sm:gap-4 max-sm:py-7 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-7 sm:py-10 lg:py-12">
               <span aria-hidden="true" className="select-none text-[4.5rem] font-semibold leading-[0.85] tracking-[-0.06em] text-[#021861] sm:text-[7rem]">O</span>
               <div className="min-w-0">
                 <div className="mb-4 flex items-center gap-2">
@@ -141,14 +141,14 @@ export default function Home() {
                   <span className="text-xs font-medium tracking-[0.2em] text-[#021861]">02</span>
                 </div>
                 <h3 className="text-xl font-semibold leading-tight tracking-tight text-white sm:text-2xl text-balance [overflow-wrap:break-word]">Orchestration</h3>
-                <p className="mt-4 max-w-md text-base leading-7 text-[#021861]">
+                <p className="mt-4 max-w-md text-base leading-7 text-[#021861] max-sm:mt-3">
                 Bringing security technologies, processes and teams together.
               </p>
               </div>
             </div>
 
             {/* Resilience */}
-            <div className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-5 border-t border-[#021861]/60 py-8 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-7 sm:py-10 lg:py-12">
+            <div className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-5 border-t border-[#021861]/60 py-8 max-sm:gap-4 max-sm:py-7 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-7 sm:py-10 lg:py-12">
               <span aria-hidden="true" className="select-none text-[4.5rem] font-semibold leading-[0.85] tracking-[-0.06em] text-[#021861] sm:text-[7rem]">R</span>
               <div className="min-w-0">
                 <div className="mb-4 flex items-center gap-2">
@@ -156,7 +156,7 @@ export default function Home() {
                   <span className="text-xs font-medium tracking-[0.2em] text-[#021861]">03</span>
                 </div>
                 <h3 className="text-xl font-semibold leading-tight tracking-tight text-white sm:text-2xl text-balance [overflow-wrap:break-word]">Resilience</h3>
-                <p className="mt-4 max-w-md text-base leading-7 text-[#021861]">
+                <p className="mt-4 max-w-md text-base leading-7 text-[#021861] max-sm:mt-3">
                 Enabling organizations to withstand, respond to and recover
                 from cyber threats.
               </p>
@@ -164,7 +164,7 @@ export default function Home() {
             </div>
 
             {/* Visibility */}
-            <div className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-5 border-t border-[#021861]/60 py-8 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-7 sm:py-10 lg:py-12">
+            <div className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-5 border-t border-[#021861]/60 py-8 max-sm:gap-4 max-sm:py-7 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-7 sm:py-10 lg:py-12">
               <span aria-hidden="true" className="select-none text-[4.5rem] font-semibold leading-[0.85] tracking-[-0.06em] text-[#021861] sm:text-[7rem]">V</span>
               <div className="min-w-0">
                 <div className="mb-4 flex items-center gap-2">
@@ -172,7 +172,7 @@ export default function Home() {
                   <span className="text-xs font-medium tracking-[0.2em] text-[#021861]">04</span>
                 </div>
                 <h3 className="text-xl font-semibold leading-tight tracking-tight text-white sm:text-2xl text-balance [overflow-wrap:break-word]">Visibility</h3>
-                <p className="mt-4 max-w-md text-base leading-7 text-[#021861]">
+                <p className="mt-4 max-w-md text-base leading-7 text-[#021861] max-sm:mt-3">
                 Creating a unified view across network, cloud, endpoint,
                 identity and data.
               </p>
@@ -180,7 +180,7 @@ export default function Home() {
             </div>
 
             {/* Intelligence */}
-            <div className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-5 border-t border-[#021861]/60 py-8 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-7 sm:py-10 lg:py-12">
+            <div className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-5 border-t border-[#021861]/60 py-8 max-sm:gap-4 max-sm:py-7 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-7 sm:py-10 lg:py-12">
               <span aria-hidden="true" className="select-none text-[4.5rem] font-semibold leading-[0.85] tracking-[-0.06em] text-[#021861] sm:text-[7rem]">I</span>
               <div className="min-w-0">
                 <div className="mb-4 flex items-center gap-2">
@@ -188,7 +188,7 @@ export default function Home() {
                   <span className="text-xs font-medium tracking-[0.2em] text-[#021861]">05</span>
                 </div>
                 <h3 className="text-xl font-semibold leading-tight tracking-tight text-white sm:text-2xl text-balance [overflow-wrap:break-word]">Intelligence</h3>
-                <p className="mt-4 max-w-md text-base leading-7 text-[#021861]">
+                <p className="mt-4 max-w-md text-base leading-7 text-[#021861] max-sm:mt-3">
                 Turning security data and threat intelligence into actionable
                 insights.
               </p>
@@ -196,7 +196,7 @@ export default function Home() {
             </div>
 
             {/* Execution */}
-            <div className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-5 border-t border-[#021861]/60 py-8 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-7 sm:py-10 lg:py-12">
+            <div className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-5 border-t border-[#021861]/60 py-8 max-sm:gap-4 max-sm:py-7 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-7 sm:py-10 lg:py-12">
               <span aria-hidden="true" className="select-none text-[4.5rem] font-semibold leading-[0.85] tracking-[-0.06em] text-[#021861] sm:text-[7rem]">X</span>
               <div className="min-w-0">
                 <div className="mb-4 flex items-center gap-2">
@@ -204,7 +204,7 @@ export default function Home() {
                   <span className="text-xs font-medium tracking-[0.2em] text-[#021861]">06</span>
                 </div>
                 <h3 className="text-xl font-semibold leading-tight tracking-tight text-white sm:text-2xl text-balance [overflow-wrap:break-word]">eXecution</h3>
-                <p className="mt-4 max-w-md text-base leading-7 text-[#021861]">
+                <p className="mt-4 max-w-md text-base leading-7 text-[#021861] max-sm:mt-3">
                 Converting strategy into implementation, response and
                 measurable outcomes.
               </p>
@@ -252,7 +252,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12 grid min-w-0 grid-cols-1 border border-[#021861] bg-[#021861] sm:mt-16 lg:grid-cols-2">
+          <div className="mt-12 grid min-w-0 grid-cols-1 border border-[#021861] bg-[#021861] sm:mt-16 lg:grid-cols-2 max-sm:mt-10">
             {/* Network Security */}
             <div className="min-w-0 p-6 sm:p-8 lg:col-span-2 lg:p-12">
               <div className="mb-6 flex items-center justify-between lg:mb-8">
@@ -264,7 +264,7 @@ export default function Home() {
               </div>
               <div className="grid gap-5 lg:grid-cols-2 lg:items-start lg:gap-16">
                 <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-[-0.03em] text-white text-balance [overflow-wrap:break-word]">Network Security</h3>
-                <p className="max-w-xl text-base leading-7 text-white/75">
+                <p className="max-w-xl text-base leading-7 text-white/75 max-sm:leading-6">
                 Protect networks, infrastructure and connectivity with
                 integrated security architecture, segmentation, secure access
                 and advanced threat protection.
@@ -283,7 +283,7 @@ export default function Home() {
               </div>
               <div className="min-w-0">
                 <h3 className="text-2xl sm:text-3xl font-semibold leading-tight tracking-[-0.03em] text-white text-balance [overflow-wrap:break-word]">Cloud Security</h3>
-                <p className="mt-5 max-w-xl text-base leading-7 text-white/75">
+                <p className="mt-5 max-w-xl text-base leading-7 text-white/75 max-sm:leading-6">
                 Secure cloud infrastructure, workloads, applications,
                 identities and data across modern hybrid and multi-cloud
                 environments.
@@ -302,7 +302,7 @@ export default function Home() {
               </div>
               <div className="min-w-0">
                 <h3 className="text-2xl sm:text-3xl font-semibold leading-tight tracking-[-0.03em] text-white text-balance [overflow-wrap:break-word]">Identity & Access</h3>
-                <p className="mt-5 max-w-xl text-base leading-7 text-white/75">
+                <p className="mt-5 max-w-xl text-base leading-7 text-white/75 max-sm:leading-6">
                 Build identity-centric security with strong authentication,
                 access controls, privileged access protection and Zero Trust
                 principles.
@@ -323,7 +323,7 @@ export default function Home() {
                 <h3 className="text-2xl sm:text-3xl font-semibold leading-tight tracking-[-0.03em] text-white text-balance [overflow-wrap:break-word]">
                 Endpoint & Workplace Security
               </h3>
-                <p className="mt-5 max-w-xl text-base leading-7 text-white/75">
+                <p className="mt-5 max-w-xl text-base leading-7 text-white/75 max-sm:leading-6">
                 Protect users, devices and endpoints while enabling secure
                 digital work environments.
               </p>
@@ -343,7 +343,7 @@ export default function Home() {
                 <h3 className="text-2xl sm:text-3xl font-semibold leading-tight tracking-[-0.03em] text-white text-balance [overflow-wrap:break-word]">
                 Data & Application Security
               </h3>
-                <p className="mt-5 max-w-xl text-base leading-7 text-white/75">
+                <p className="mt-5 max-w-xl text-base leading-7 text-white/75 max-sm:leading-6">
                 Protect sensitive information and applications throughout their
                 lifecycle—from development and deployment to operations.
               </p>
@@ -361,7 +361,7 @@ export default function Home() {
               </div>
               <div className="grid gap-5 lg:grid-cols-2 lg:items-start lg:gap-16">
                 <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-[-0.03em] text-white text-balance [overflow-wrap:break-word]">Security Operations</h3>
-                <p className="max-w-xl text-base leading-7 text-white/75">
+                <p className="max-w-xl text-base leading-7 text-white/75 max-sm:leading-6">
                 Improve detection, investigation and response through integrated
                 monitoring, analytics, automation, threat intelligence and AI.
               </p>
@@ -429,13 +429,13 @@ export default function Home() {
           </ol>
 
           {/* Supporting copy */}
-          <div className="mt-10 grid gap-10 sm:mt-12 lg:mt-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+          <div className="mt-10 grid gap-10 sm:mt-12 lg:mt-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 max-sm:mt-8">
             <div className="min-w-0 lg:pr-6">
               <h3 className="text-2xl font-semibold leading-tight tracking-tight text-white sm:text-3xl text-balance [overflow-wrap:break-word]">
                 Integration that fits the enterprise
               </h3>
 
-              <p className="mt-5 leading-8 text-white/75">
+              <p className="mt-5 leading-8 text-white/75 max-sm:leading-7">
                 We architect, integrate and optimize cybersecurity environments
                 across the enterprise. Our vendor-neutral approach allows us to
                 select and integrate the technologies best aligned to each
@@ -458,7 +458,7 @@ export default function Home() {
               ].map(([title, description]) => (
                 <div
                   key={title}
-                  className="min-w-0 border-t border-white/20 py-5"
+                  className="min-w-0 border-t border-white/20 py-5 max-sm:py-4"
                 >
                   <h4 className="text-sm font-semibold text-white">{title}</h4>
 
@@ -520,11 +520,11 @@ export default function Home() {
               </div>
             </div>
             {/* Labels stay separate from the diagram on smaller screens */}
-            <div className="mt-6 grid min-w-0 grid-cols-1 gap-x-6 sm:grid-cols-2 lg:contents">
-              <div className="border-t border-[#9292F0]/40 py-4 text-xs font-semibold tracking-[0.12em] text-white lg:absolute lg:left-0 lg:top-1/2 lg:w-[20%] lg:-translate-y-1/2">HUMAN EXPERTISE</div>
-              <div className="border-t border-[#9292F0]/40 py-4 text-xs font-semibold tracking-[0.12em] text-white lg:absolute lg:right-0 lg:top-1/2 lg:w-[20%] lg:-translate-y-1/2 lg:text-right">AUTOMATION</div>
-              <div className="border-t border-[#9292F0]/40 py-4 text-xs font-semibold tracking-[0.12em] text-white lg:absolute lg:left-0 lg:top-[12%] lg:w-[25%]">THREAT INTELLIGENCE</div>
-              <div className="border-t border-[#9292F0]/40 py-4 text-xs font-semibold tracking-[0.12em] text-white lg:absolute lg:bottom-[12%] lg:right-0 lg:w-[25%] lg:text-right">SECURITY ANALYTICS</div>
+            <div className="mt-6 grid min-w-0 grid-cols-1 gap-x-6 sm:grid-cols-2 lg:contents max-sm:mt-8">
+              <div className="border-t border-[#9292F0]/40 py-4 text-xs font-semibold tracking-[0.12em] text-white max-sm:flex max-sm:min-h-12 max-sm:min-w-0 max-sm:items-center max-sm:py-3 max-sm:leading-5 max-sm:break-words lg:absolute lg:left-0 lg:top-1/2 lg:w-[20%] lg:-translate-y-1/2">HUMAN EXPERTISE</div>
+              <div className="border-t border-[#9292F0]/40 py-4 text-xs font-semibold tracking-[0.12em] text-white max-sm:flex max-sm:min-h-12 max-sm:min-w-0 max-sm:items-center max-sm:py-3 max-sm:leading-5 max-sm:break-words lg:absolute lg:right-0 lg:top-1/2 lg:w-[20%] lg:-translate-y-1/2 lg:text-right">AUTOMATION</div>
+              <div className="border-t border-[#9292F0]/40 py-4 text-xs font-semibold tracking-[0.12em] text-white max-sm:flex max-sm:min-h-12 max-sm:min-w-0 max-sm:items-center max-sm:py-3 max-sm:leading-5 max-sm:break-words lg:absolute lg:left-0 lg:top-[12%] lg:w-[25%]">THREAT INTELLIGENCE</div>
+              <div className="border-t border-[#9292F0]/40 py-4 text-xs font-semibold tracking-[0.12em] text-white max-sm:flex max-sm:min-h-12 max-sm:min-w-0 max-sm:items-center max-sm:py-3 max-sm:leading-5 max-sm:break-words lg:absolute lg:bottom-[12%] lg:right-0 lg:w-[25%] lg:text-right">SECURITY ANALYTICS</div>
             </div>
           </div>
 
@@ -573,7 +573,7 @@ export default function Home() {
 
           {/* Human-led positioning */}
           <div className="mt-6 border-t border-[#9292F0]/50 pt-10 text-center sm:mt-10 sm:pt-12">
-            <p className="mx-auto max-w-4xl text-lg leading-8 text-white/75 sm:text-xl sm:leading-9">
+            <p className="mx-auto max-w-4xl text-lg leading-8 text-white/75 sm:text-xl sm:leading-9 max-sm:leading-7">
               We don&apos;t position AI as a replacement for cybersecurity
               professionals. We use AI to augment human expertise, accelerate
               decision-making and improve security outcomes.
@@ -604,7 +604,7 @@ export default function Home() {
           </div>
 
           {/* Connected ecosystem architecture */}
-          <div className="mx-auto mt-12 max-w-5xl border-y border-[#021861]/40 py-8 sm:mt-16 sm:py-12 lg:py-16">
+          <div className="mx-auto mt-12 max-w-5xl border-y border-[#021861]/40 py-8 sm:mt-16 sm:py-12 lg:py-16 max-sm:mt-10 max-sm:py-6">
             <div className="relative mx-auto grid w-full max-w-3xl grid-cols-1 border-l border-[#021861]/60 sm:grid-cols-3 sm:border-l-0">
               <div aria-hidden="true" className="absolute bottom-0 left-0 h-px w-1/2 bg-[#021861]/60 sm:left-[16.6667%] sm:w-2/3" />
               <div className="relative min-w-0 pb-6 sm:pb-10 pl-6 sm:px-3 sm:text-center sm:before:absolute sm:before:bottom-0 sm:before:left-1/2 sm:before:h-6 sm:before:w-px sm:before:bg-[#021861]/60">
@@ -647,7 +647,7 @@ export default function Home() {
           </div>
 
           {/* Supporting copy */}
-          <div className="mt-10 text-center sm:mt-12 lg:mt-16">
+          <div className="mt-10 text-center sm:mt-12 lg:mt-16 max-sm:mt-8">
             <h3 className="text-2xl font-semibold leading-tight tracking-tight text-white sm:text-3xl text-balance [overflow-wrap:break-word]">
               Technology-neutral. Outcome-driven.
             </h3>
@@ -695,7 +695,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-12 grid gap-x-12 sm:mt-16 lg:grid-cols-2">
+          <div className="mt-12 grid gap-x-12 sm:mt-16 lg:grid-cols-2 max-sm:mt-10">
             {[
               [
                 "SOC Services",
@@ -732,7 +732,7 @@ export default function Home() {
             ].map(([title, description], index) => (
               <div
                 key={title}
-                className="min-w-0 border-t border-[#9292F0]/40 py-8"
+                className="min-w-0 border-t border-[#9292F0]/40 py-8 max-sm:py-7"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-semibold tracking-[0.2em] text-white">
@@ -753,7 +753,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-8 flex flex-col items-start justify-between gap-8 border-t-2 border-[#9292F0]/50 pt-10 lg:flex-row lg:items-center">
+          <div className="mt-8 flex flex-col items-start justify-between gap-8 border-t-2 border-[#9292F0]/50 pt-10 lg:flex-row lg:items-center max-sm:mt-6 max-sm:pt-8">
             <div>
               <h3 className="text-2xl font-semibold text-balance [overflow-wrap:break-word]">
                 Strengthen your security operations

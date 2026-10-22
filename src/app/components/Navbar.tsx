@@ -152,8 +152,8 @@ export default function Navbar() {
             ☰
           </summary>
 
-          <div className="absolute right-0 top-full z-[100] mt-4 w-[280px] max-w-[calc(100vw-3rem)] border border-[#9292F0]/40 bg-[#021861] p-5 shadow-2xl">
-            <nav className="flex flex-col gap-4 text-sm text-white/75">
+          <div className="absolute right-0 top-full z-[100] mt-4 w-[280px] max-w-[calc(100vw-3rem)] border border-[#9292F0]/40 bg-[#021861] p-5 shadow-2xl max-sm:max-h-[calc(100dvh-8rem)] max-sm:overflow-y-auto max-sm:p-4">
+            <nav className="flex flex-col gap-4 text-sm text-white/75 max-sm:gap-3">
 
               <Link
                 href="/"
@@ -181,7 +181,7 @@ export default function Navbar() {
                   Solutions ▼
                 </summary>
 
-                <div className="mt-3 ml-3 flex flex-col gap-3 border-l border-white/10 pl-4">
+                <div className="mt-3 ml-3 flex flex-col gap-3 border-l border-white/10 pl-4 max-sm:gap-2">
 
                   <Link
                     href="/solutions"
@@ -265,7 +265,7 @@ export default function Navbar() {
 
               <Link
                 href="/contact"
-                className="mt-2 border border-[#9292F0]/60 px-4 py-3 text-center font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="mt-2 border border-[#9292F0]/60 px-4 py-3 text-center font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white max-sm:mt-3"
               >
                 Talk to an Expert
               </Link>
