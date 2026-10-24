@@ -1,112 +1,93 @@
-import Navbar from "../components/Navbar";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import { Arrow, CtaBand, PageHero, SectionHeader } from "../components/ui";
+import { capabilities } from "../lib/content";
+import { solutions } from "../lib/site";
+
+export const metadata: Metadata = {
+  title: "Cybersecurity Solutions",
+  description:
+    "Network, cloud, identity, endpoint, data and application security and security operations — designed and integrated across the enterprise by SECORVIX.",
+  alternates: { canonical: "/solutions/" },
+};
 
 export default function SolutionsPage() {
   return (
-    <main className="min-h-screen bg-[#9292F0] text-white">
-      {/* Navigation */}
+    <main>
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative isolate overflow-hidden border-b border-[#021861]/40 bg-[#9292F0]">
-        <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-10 lg:py-28 before:pointer-events-none before:absolute before:inset-y-12 before:right-8 before:-z-10 before:hidden before:w-1/4 before:rotate-6 before:border before:border-[#021861]/30 before:bg-[#021861]/10 lg:before:block">
-          <p className="mb-8 border-l-2 border-[#DE1110] pl-4 text-xs font-semibold tracking-[0.2em] text-[#021861]">
-            CYBERSECURITY SOLUTIONS
-          </p>
-
-          <h1 className="max-w-5xl text-[clamp(2.5rem,6vw,5.25rem)] font-semibold leading-[1.02] tracking-[-0.045em] text-white text-balance [overflow-wrap:break-word]">
-            Security Across{" "}
-            <span className="block text-white">
-              Every Layer of the Enterprise
-            </span>
-          </h1>
-
-          <p className="mt-10 max-w-3xl border-l-2 border-[#021861] pl-5 text-base leading-8 text-[#021861] sm:text-lg">
+      <PageHero
+        eyebrow="Cybersecurity Solutions"
+        title="Security Across Every Layer of the Enterprise"
+        intro={
+          <p>
             Cybersecurity is no longer a single technology. It is an
             interconnected ecosystem. SECORVIX designs and integrates security
             capabilities across the entire digital environment.
           </p>
+        }
+        image="/images/hero-solutions.webp"
+      />
+
+      <section className="bg-white py-20 text-ink sm:py-28">
+        <div className="mx-auto max-w-7xl space-y-6 px-5 sm:px-6 lg:px-8">
+          {capabilities.map(({ title, text, image }, i) => (
+            <article
+              key={title}
+              className="zoom-media grid overflow-hidden rounded-[2rem] border border-navy/10 bg-mist lg:grid-cols-2"
+            >
+              <div className={`relative min-h-64 lg:min-h-80 ${i % 2 ? "lg:order-2" : ""}`}>
+                <Image src={image} alt="" fill sizes="(min-width: 1024px) 640px, 100vw" className="object-cover" />
+              </div>
+              <div className="flex flex-col justify-center p-8 sm:p-12">
+                <span className="text-sm font-semibold tracking-[0.2em] text-signal">{String(i + 1).padStart(2, "0")}</span>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>
+                <p className="mt-4 max-w-lg leading-8 text-navy/75">{text}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* Solutions Grid */}
-      <section className="bg-[#9292F0] py-16 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid min-w-0 grid-cols-1 border border-[#021861] bg-[#021861] lg:grid-cols-2">
-            {[
-              [
-                "01",
-                "Network Security",
-                "Protect networks, infrastructure and connectivity with integrated security architecture, segmentation, secure access and advanced threat protection.",
-              ],
-              [
-                "02",
-                "Cloud Security",
-                "Secure cloud infrastructure, workloads, applications, identities and data across modern hybrid and multi-cloud environments.",
-              ],
-              [
-                "03",
-                "Identity & Access",
-                "Build identity-centric security with strong authentication, access controls, privileged access protection and Zero Trust principles.",
-              ],
-              [
-                "04",
-                "Endpoint & Workplace Security",
-                "Protect users, devices and endpoints while enabling secure digital work environments.",
-              ],
-              [
-                "05",
-                "Data & Application Security",
-                "Protect sensitive information and applications throughout their lifecycle—from development and deployment to operations.",
-              ],
-              [
-                "06",
-                "Security Operations",
-                "Improve detection, investigation and response through integrated monitoring, analytics, automation, threat intelligence and AI.",
-              ],
-            ].map(([number, title, description]) => (
-              <div
-                key={title}
-                className={`min-w-0 p-6 sm:p-8 ${number === "01" || number === "06" ? "lg:col-span-2 lg:p-12" : "lg:p-10"} ${number !== "01" ? "border-t border-white/20" : ""} ${number === "03" || number === "05" ? "lg:border-l" : ""}`}
+      {/* Related services */}
+      <section className="bg-ink py-20 sm:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Integrated Security"
+            title="Security technologies deliver more value when they work together."
+            intro={
+              <p>
+                SECORVIX combines architecture, integration, intelligence,
+                automation and expert-led services to create security
+                environments that are connected, visible and resilient.
+              </p>
+            }
+          />
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {solutions.slice(1).map((s) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="group flex min-h-36 flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-lavender hover:bg-white/[0.06]"
               >
-                <div className="mb-6 flex items-center gap-3 text-xs font-semibold tracking-[0.2em] text-white">
-                  <span aria-hidden="true" className="h-1.5 w-1.5 bg-[#DE1110]" />
-                  {number}
-                </div>
-                <div className={number === "01" || number === "06" ? "grid min-w-0 gap-5 lg:grid-cols-2 lg:gap-16" : "min-w-0"}>
-                  <h2 className={`font-semibold leading-tight tracking-[-0.03em] text-white text-balance [overflow-wrap:break-word] ${number === "01" || number === "06" ? "text-3xl sm:text-4xl lg:text-5xl" : "text-2xl sm:text-3xl"}`}>{title}</h2>
-                  <p className={`max-w-xl text-base leading-7 text-white/75 ${number === "01" || number === "06" ? "" : "mt-5"}`}>
-                    {description}
-                  </p>
-                </div>
-              </div>
+                <span className="text-lg font-semibold">{s.label}</span>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-lavender">
+                  Learn more <Arrow />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Supporting Positioning */}
-      <section className="border-t border-[#9292F0]/30 bg-[#021861] py-16 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="border-y border-[#9292F0]/40 py-10 sm:py-14">
-            <p className="border-l-2 border-[#DE1110] pl-4 text-xs font-semibold tracking-[0.2em] text-[#9292F0]">
-              INTEGRATED SECURITY
-            </p>
+      <CtaBand
+        title="Secure every layer of your enterprise."
+        text="Talk to SECORVIX about designing and integrating security capabilities across your environment."
+      />
 
-            <h2 className="mt-8 max-w-4xl text-3xl font-semibold leading-[1.08] tracking-[-0.035em] text-white text-balance [overflow-wrap:break-word] sm:text-4xl lg:text-5xl">
-              Security technologies deliver more value when they work together.
-            </h2>
-
-            <p className="mt-8 max-w-3xl text-base leading-8 text-white/75 sm:text-lg">
-              SECORVIX combines architecture, integration, intelligence,
-              automation and expert-led services to create security
-              environments that are connected, visible and resilient.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
       <Footer />
     </main>
   );
