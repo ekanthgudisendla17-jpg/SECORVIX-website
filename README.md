@@ -23,7 +23,7 @@ npm run build    # static export to ./out
 | `public/images/` | Photography (Unsplash License — free for commercial use) |
 | `public/.htaccess` | Copied to the web root on every build |
 
-`sitemap.xml` and `robots.txt` are generated from `src/app/sitemap.ts` and `src/app/robots.ts`.
+`sitemap.xml`, `robots.txt` and `llms.txt` (a site summary for AI assistants) are generated on every build from `src/app/sitemap.ts`, `src/app/robots.ts` and `src/app/llms.txt/route.ts`.
 
 ## Blog dashboard
 
