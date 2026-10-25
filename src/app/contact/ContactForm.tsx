@@ -72,11 +72,30 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div>
-        <label htmlFor="contact-email" className={labelClass}>
-          Business Email
-        </label>
-        <input type="email" id="contact-email" name="email" autoComplete="email" required className={fieldClass} placeholder="you@company.com" />
+      <div className="grid min-w-0 gap-6 sm:grid-cols-2">
+        <div>
+          <label htmlFor="contact-email" className={labelClass}>
+            Business Email
+          </label>
+          <input type="email" id="contact-email" name="email" autoComplete="email" required className={fieldClass} placeholder="you@company.com" />
+        </div>
+        <div>
+          <label htmlFor="contact-phone" className={labelClass}>
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            id="contact-phone"
+            name="phone"
+            autoComplete="tel"
+            inputMode="tel"
+            required
+            pattern="[0-9+\(\)\-\s]{7,20}"
+            title="Enter a valid phone number, e.g. +91 98765 43210"
+            className={fieldClass}
+            placeholder="+91 98765 43210"
+          />
+        </div>
       </div>
 
       <div>

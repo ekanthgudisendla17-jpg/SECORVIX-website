@@ -1,6 +1,6 @@
 <?php
 // Contact form: emails each enquiry to the SECORVIX inbox.
-//   POST contact.php  { firstName, lastName, email, company, interest, message, website }
+//   POST contact.php  { firstName, lastName, email, phone, company, interest, message, website }
 
 declare(strict_types=1);
 require __DIR__ . '/_bootstrap.php';
@@ -24,6 +24,7 @@ $oneLine = function (string $value): string {
 $first = $oneLine(str_field($in, 'firstName', 80));
 $last = $oneLine(str_field($in, 'lastName', 80));
 $email = $oneLine(str_field($in, 'email', 200));
+$phone = $oneLine(str_field($in, 'phone', 30));
 $company = $oneLine(str_field($in, 'company', 150));
 $interest = $oneLine(str_field($in, 'interest', 80));
 $message = str_field($in, 'message', 5000);
@@ -34,12 +35,17 @@ if ($first === '' || $last === '' || $company === '' || $interest === '' || $mes
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     fail('Please enter a valid email address.');
 }
+$digits = preg_replace('/\D/', '', $phone) ?? '';
+if (!preg_match('/^[0-9+()\-\s]{7,20}$/', $phone) || strlen($digits) < 7 || strlen($digits) > 15) {
+    fail('Please enter a valid phone number.');
+}
 
 $c = config();
 $subject = 'Website enquiry: ' . $interest . ' - ' . $company;
 $body = "New enquiry from secorvix-ai.com\n\n"
     . "Name:      {$first} {$last}\n"
     . "Email:     {$email}\n"
+    . "Phone:     {$phone}\n"
     . "Company:   {$company}\n"
     . "Interest:  {$interest}\n\n"
     . "Message:\n{$message}\n\n"
