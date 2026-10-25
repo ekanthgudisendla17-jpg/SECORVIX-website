@@ -18,26 +18,45 @@ const interests = [
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
+  const [result, setResult] = useState<{ ok: boolean; message: string } | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setIsSubmitting(true);
-    setSuccessMessage("");
+    setResult(null);
 
     const form = e.currentTarget;
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSuccessMessage("Thank you. Your enquiry has been submitted successfully.");
+    try {
+      const res = await fetch("/api/contact.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Sorry, your message could not be sent.");
 
+      setResult({ ok: true, message: "Thank you. Your enquiry has been sent — our team will be in touch shortly." });
       form.reset();
-    }, 800);
+    } catch (err) {
+      setResult({
+        ok: false,
+        message: err instanceof Error && err.message !== "Failed to fetch" ? err.message : "Sorry, your message could not be sent. Please email us at contact@secorvix-ai.com.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="grid min-w-0 gap-6">
+      {/* Honeypot for bots; hidden from people and assistive tech */}
+      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        <label htmlFor="contact-website">Website</label>
+        <input type="text" id="contact-website" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className="grid min-w-0 gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="contact-firstName" className={labelClass}>
@@ -99,7 +118,11 @@ export default function ContactForm() {
       </button>
 
       <div role="status" aria-live="polite" aria-atomic="true" className="min-h-6">
-        {successMessage && <p className="text-sm leading-6 text-navy">{successMessage}</p>}
+        {result && (
+          <p className={`rounded-xl px-4 py-3 text-sm leading-6 ${result.ok ? "bg-emerald-50 text-emerald-800" : "bg-red-50 text-red-700"}`}>
+            {result.message}
+          </p>
+        )}
       </div>
     </form>
   );

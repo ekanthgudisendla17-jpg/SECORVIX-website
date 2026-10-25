@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { formatDate, type Post } from "../lib/posts";
+import { coverOf, formatDate, type Post } from "../lib/posts";
 import { Arrow } from "./ui";
 
 export default function PostCard({ post, tone = "dark" }: { post: Post; tone?: "light" | "dark" }) {
@@ -13,7 +13,7 @@ export default function PostCard({ post, tone = "dark" }: { post: Post; tone?: "
       }`}
     >
       <div className="relative aspect-[16/10]">
-        <Image src={post.image} alt="" fill sizes="(min-width: 1024px) 400px, 100vw" className="object-cover" />
+        <Image src={coverOf(post)} alt="" fill sizes="(min-width: 1024px) 400px, 100vw" className="object-cover" />
         <span className="absolute left-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-xs font-medium text-white backdrop-blur">
           {post.category}
         </span>
@@ -25,7 +25,7 @@ export default function PostCard({ post, tone = "dark" }: { post: Post; tone?: "
         <h3 className={`mt-3 text-xl font-semibold leading-snug tracking-tight ${light ? "text-ink" : "text-white"}`}>
           {post.title}
         </h3>
-        <p className={`mt-3 flex-1 text-sm leading-7 ${light ? "text-navy/70" : "text-white/65"}`}>{post.excerpt}</p>
+        <p className={`mt-3 flex-1 text-sm leading-7 ${light ? "text-navy/70" : "text-white/65"}`}>{post.summary}</p>
         <span className={`mt-6 inline-flex items-center gap-2 text-sm font-semibold ${light ? "text-navy" : "text-lavender"}`}>
           Read article <Arrow />
         </span>

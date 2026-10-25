@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import PostCard from "./components/PostCard";
 import { Arrow, buttonGhost, buttonPrimary, CtaBand, SectionHeader } from "./components/ui";
 import { capabilities, industries, principles } from "./lib/content";
-import { posts } from "./lib/posts";
+import { getPosts } from "./lib/posts";
 
 const pillars = [
   ["Security", "Protect assets, identities and data."],
@@ -52,7 +52,9 @@ const approach = [
 
 const pad = (n: number) => String(n + 1).padStart(2, "0");
 
-export default function Home() {
+export default async function Home() {
+  const posts = (await getPosts()).slice(0, 3);
+
   return (
     <main>
       <Navbar />
@@ -449,13 +451,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Insights */}
+      {/* Blog */}
       <section className="bg-ink py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <SectionHeader eyebrow="Insights" title="Latest from SECORVIX" />
+            <SectionHeader eyebrow="Blog" title="Latest from the SECORVIX Blog" />
             <Link href="/blog/" className={`group shrink-0 ${buttonGhost}`}>
-              View all insights <Arrow />
+              View all posts <Arrow />
             </Link>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

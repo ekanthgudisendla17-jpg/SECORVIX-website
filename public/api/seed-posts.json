@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "from-tool-sprawl-to-integrated-security",
+    "title": "From Tool Sprawl to an Integrated Security Architecture",
+    "summary": "Most enterprises do not lack security tools. They lack security tools that work together. Here is how to move from a fragmented stack to one connected architecture.",
+    "html": "<p>Over the last decade, most organizations have bought security the same way: one problem, one product. A firewall for the perimeter, an endpoint agent for laptops, a cloud posture tool for the new AWS account, an identity platform for single sign-on. Each purchase made sense on its own. Together, they often create a different problem — an environment where every tool has its own console, its own alerts and its own view of the truth.</p><h2>Why fragmentation is a security risk</h2><p>Attackers do not respect product boundaries. A single intrusion might begin with a phished identity, move through an unmanaged endpoint and finish with data leaving a misconfigured cloud bucket. If each of those signals lives in a separate tool, the connection between them is left for an analyst to discover manually — usually too late.</p><ul><li><p>Alerts are triaged in isolation, so related events are never correlated.</p></li><li><p>Overlapping tools create duplicate cost without adding coverage.</p></li><li><p>Gaps appear where no product clearly owns a control.</p></li><li><p>Teams spend their time switching consoles rather than investigating.</p></li></ul><h2>What an integrated architecture looks like</h2><p>Integration is not about buying a single platform that does everything. It is about designing how identity, network, endpoint, cloud and data controls share context. In practice that means a common source of telemetry, agreed ownership for each control, and automation that lets one tool act on what another has seen.</p><blockquote><p>The goal is not fewer tools for its own sake. The goal is one coherent view of risk, and one coordinated response.</p></blockquote><h2>A practical path forward</h2><ul><li><p>Discover: inventory every security technology, who owns it and what it actually covers.</p></li><li><p>Assess: map coverage against your critical assets and identify overlaps and gaps.</p></li><li><p>Design: define a target architecture and how data should flow between controls.</p></li><li><p>Integrate and consolidate: connect what stays, retire what duplicates.</p></li><li><p>Operate and optimize: measure detection and response outcomes, not tool counts.</p></li></ul><p>A vendor-neutral approach matters here. The right answer depends on your existing investments, your regulatory obligations and your team's capacity — not on a single vendor's roadmap. Done well, integration reduces cost and complexity at the same time as it improves visibility.</p>",
+    "category": "Security Integration",
+    "tags": [],
+    "author": "SECORVIX Team",
+    "cover": "/images/blog-integration.webp",
+    "date": "2026-10-22T04:30:00Z",
+    "seoTitle": "",
+    "seoDescription": ""
+  },
+  {
+    "slug": "ai-in-the-soc-augmenting-human-analysts",
+    "title": "AI in the SOC: Augmenting Analysts, Not Replacing Them",
+    "summary": "AI can dramatically reduce the noise a security operations team deals with. But the best outcomes come when AI accelerates human judgement rather than trying to replace it.",
+    "html": "<p>Security operations centres face a volume problem. Modern environments generate enormous quantities of logs, alerts and threat intelligence, and the number of skilled analysts available to review them has not kept pace. AI is a natural answer — but how it is applied makes the difference between a faster SOC and a noisier one.</p><h2>Where AI adds real value</h2><ul><li><p>Detection: spotting anomalous behaviour across users, devices and workloads that static rules miss.</p></li><li><p>Triage: grouping related alerts into a single incident and ranking them by likely impact.</p></li><li><p>Enrichment: pulling in asset context, identity data and threat intelligence automatically.</p></li><li><p>Summarisation: turning a long investigation trail into a clear narrative for responders and leadership.</p></li></ul><h2>Why humans stay in the loop</h2><p>Security decisions carry business consequences. Isolating a production server, disabling an executive's account or notifying a regulator are judgement calls that depend on context an AI model rarely has in full. Models can also be wrong with confidence, and adversaries actively look for ways to manipulate automated systems.</p><blockquote><p>Let AI do the reading, the correlating and the drafting. Let experienced people make the decisions that matter.</p></blockquote><h2>Getting started responsibly</h2><ul><li><p>Start with well-understood, high-volume tasks such as alert enrichment and deduplication.</p></li><li><p>Keep automated response actions reversible, and require approval for high-impact steps.</p></li><li><p>Measure outcomes: mean time to detect, mean time to respond and analyst workload.</p></li><li><p>Review model output regularly, and feed analyst corrections back into tuning.</p></li></ul><p>Used this way, AI lets a security team spend less time on repetitive work and more time on threat hunting, investigation and improving defences — which is where human expertise is most valuable.</p>",
+    "category": "AI & Cyber Intelligence",
+    "tags": [],
+    "author": "SECORVIX Team",
+    "cover": "/images/blog-ai-soc.webp",
+    "date": "2026-10-14T04:30:00Z",
+    "seoTitle": "",
+    "seoDescription": ""
+  },
+  {
+    "slug": "cyber-resilience-planning-for-recovery",
+    "title": "Cyber Resilience Starts with Planning for Recovery",
+    "summary": "Prevention will never be perfect. Resilient organizations assume an incident will happen and prepare to withstand it, respond quickly and recover with confidence.",
+    "html": "<p>For years, security strategy focused almost entirely on keeping attackers out. That work remains essential, but it is no longer sufficient. Ransomware, supply-chain compromise and insider threats mean every organization should plan for the day a control fails. Cyber resilience is the ability to anticipate, withstand, respond to and recover from that day.</p><h2>The resilience lifecycle</h2><ul><li><p>Anticipate: understand your critical services, their dependencies and the threats most likely to affect them.</p></li><li><p>Prevent: apply layered controls aligned to those risks.</p></li><li><p>Detect: ensure you can see an incident early, across identity, endpoint, network, cloud and data.</p></li><li><p>Respond: have a tested plan, clear roles and pre-agreed decision rights.</p></li><li><p>Recover: restore services from trusted, isolated backups within agreed timeframes.</p></li><li><p>Improve: feed every incident and exercise back into the programme.</p></li></ul><h2>Recovery is where plans are proven</h2><p>Many organizations discover during an incident that their backups were reachable by the attacker, that restoration takes far longer than expected, or that nobody is sure which systems to bring back first. These are planning problems, and they can be solved before a crisis.</p><blockquote><p>A backup you have never restored is a hope, not a recovery plan.</p></blockquote><h2>Five questions to ask this quarter</h2><ul><li><p>Which business services matter most, and how long can each be unavailable?</p></li><li><p>Are critical backups immutable or isolated from the production environment?</p></li><li><p>When did we last perform a full restoration test, and how long did it take?</p></li><li><p>Does our incident response plan include legal, communications and executive roles?</p></li><li><p>Have we run a tabletop exercise against a realistic ransomware scenario?</p></li></ul><p>Resilience is not a single project. It is an operating model that connects risk management, security controls, response planning and recovery — and keeps improving as the business and the threat landscape change.</p>",
+    "category": "Cyber Resilience",
+    "tags": [],
+    "author": "SECORVIX Team",
+    "cover": "/images/blog-resilience.webp",
+    "date": "2026-10-06T04:30:00Z",
+    "seoTitle": "",
+    "seoDescription": ""
+  }
+]

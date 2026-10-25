@@ -3,14 +3,40 @@ name: Deploy to GoDaddy cPanel
 on:
   push:
     branches: [main]
+  # Started by the blog dashboard when a post is published, updated or removed.
   workflow_dispatch:
+  # Hourly check for scheduled posts whose publish time has passed.
+  schedule:
+    - cron: "17 * * * *"
 
 concurrency:
   group: deploy-production
   cancel-in-progress: false
 
+env:
+  SITE_URL: https://secorvix-ai.com
+
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.due.outputs.run }}
+    steps:
+      - id: due
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          elif curl -fsS "$SITE_URL/api/posts.php?action=due" | grep -q '"due":true'; then
+            echo "Scheduled post is due - rebuilding."
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Nothing scheduled is due."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
   deploy:
+    needs: check
+    if: needs.check.outputs.run == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,11 +48,51 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build
+      # Shared secret that lets the server record when the site was last built.
+      - name: Derive build token
+        id: token
+        env:
+          GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+        run: |
+          if [ -n "$GH_DISPATCH_TOKEN" ]; then
+            t=$(printf 'secorvix-build:%s' "$GH_DISPATCH_TOKEN" | sha256sum | cut -d' ' -f1)
+            echo "::add-mask::$t"
+            echo "value=$t" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build site with the latest blog posts
+        run: npm run build
+        env:
+          BLOG_API_URL: ${{ env.SITE_URL }}/api/posts.php
+          BLOG_BUILD_TOKEN: ${{ steps.token.outputs.value }}
+
+      - name: Write server config from secrets
+        env:
+          ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+          BUILD_TOKEN: ${{ steps.token.outputs.value }}
+        run: |
+          php -r '
+            $password = (string) getenv("ADMIN_PASSWORD");
+            $config = [
+              "admin_email" => (string) getenv("ADMIN_EMAIL"),
+              "admin_password_hash" => $password === "" ? "" : password_hash($password, PASSWORD_DEFAULT),
+              "github_token" => (string) getenv("GH_DISPATCH_TOKEN"),
+              "github_repo" => (string) getenv("GITHUB_REPOSITORY"),
+              "github_workflow" => "deploy.yml",
+              "github_ref" => "main",
+              "build_token" => (string) getenv("BUILD_TOKEN"),
+              "contact_email" => "contact@secorvix-ai.com",
+              "mail_from" => "contact@secorvix-ai.com",
+            ];
+            echo "<?php\nreturn " . var_export($config, true) . ";\n";
+          ' > out/api/config.php
 
       - name: Check build output
         run: |
           test -f out/index.html || { echo "out/index.html missing - check output: 'export'"; exit 1; }
+          test -f out/api/config.php || { echo "out/api/config.php missing"; exit 1; }
           test -f out/.htaccess || echo "WARNING: out/.htaccess missing - put .htaccess in public/"
 
       - name: Upload to cPanel (FTPS)
