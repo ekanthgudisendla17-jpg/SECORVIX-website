@@ -19,6 +19,16 @@ const statements = [
   ["Promise", "Integrated security. Intelligent outcomes. Continuous resilience."],
 ];
 
+const approach = [
+  ["Understand", "Understand the business, technology landscape, risks and security objectives."],
+  ["Assess", "Identify vulnerabilities, gaps, dependencies and opportunities for improvement."],
+  ["Architect", "Develop an integrated security architecture aligned with business requirements."],
+  ["Integrate", "Bring technologies, platforms and processes together."],
+  ["Implement", "Deploy, configure and operationalize the solution."],
+  ["Operate", "Monitor, manage, detect and respond."],
+  ["Optimize", "Continuously improve security effectiveness, efficiency and resilience."],
+];
+
 export default function AboutPage() {
   return (
     <main>
@@ -88,6 +98,49 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Challenge / Advantage */}
+      <section className="bg-ink py-20 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-6 px-5 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div className="rounded-3xl border border-white/10 p-8 sm:p-10">
+            <p className="eyebrow text-lavender">The Challenge</p>
+            <h2 className="mt-5 text-3xl font-semibold tracking-tight">Complexity is the new cybersecurity reality.</h2>
+            <p className="mt-4 leading-8 text-white/70">
+              Enterprises face too many security technologies, fragmented
+              operations, increasing threats, compliance pressure and a
+              shortage of specialist expertise.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-linear-to-br from-navy to-[#2a2f9a] p-8 sm:p-10">
+            <p className="eyebrow text-lavender">The SECORVIX Advantage</p>
+            <h2 className="mt-5 text-3xl font-semibold tracking-tight">Connected security. Clearer outcomes.</h2>
+            <p className="mt-4 leading-8 text-white/80">
+              SECORVIX brings architecture, integration, intelligence,
+              automation and managed security together to create a more
+              connected and resilient security operating model.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="bg-white py-20 text-ink sm:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <SectionHeader tone="light" eyebrow="Our Approach" title="A Structured Path from Complexity to Cyber Confidence" />
+          <ol className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {approach.map(([title, text], i) => {
+              const last = i === approach.length - 1;
+              return (
+                <li key={title} className={`rounded-3xl border p-7 ${last ? "border-navy bg-navy text-white sm:col-span-2 lg:col-span-1" : "border-navy/10 bg-mist"}`}>
+                  <span className={`text-4xl font-semibold tracking-tight ${last ? "text-lavender" : "text-navy/25"}`}>{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="mt-4 text-xl font-semibold">{title}</h3>
+                  <p className={`mt-2 text-sm leading-7 ${last ? "text-white/75" : "text-navy/70"}`}>{text}</p>
+                </li>
+              );
+            })}
+          </ol>
         </div>
       </section>
 

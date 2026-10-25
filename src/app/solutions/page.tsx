@@ -52,6 +52,34 @@ export default function SolutionsPage() {
         </div>
       </section>
 
+      {/* Zero Trust */}
+      <section className="bg-mist py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div className="grid overflow-hidden rounded-[2rem] lg:grid-cols-2">
+            <div className="relative min-h-72">
+              <Image src="/images/zero-trust.webp" alt="Padlock resting on a laptop keyboard" fill sizes="(min-width: 1024px) 640px, 100vw" className="object-cover" />
+            </div>
+            <div className="bg-navy p-8 sm:p-12">
+              <p className="eyebrow text-lavender">Zero Trust</p>
+              <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">Trust Nothing. Verify Everything.</h2>
+              <p className="mt-5 leading-8 text-white/75">
+                Modern organizations have users, applications, workloads and
+                data everywhere. We help organizations move beyond
+                perimeter-based security toward identity-driven, continuously
+                verified access models.
+              </p>
+              <ul className="mt-8 flex flex-wrap gap-2">
+                {["Identity", "Device", "Application", "Network", "Data", "Context"].map((item) => (
+                  <li key={item} className="rounded-full border border-white/20 px-4 py-2 text-sm text-white/85">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Related services */}
       <section className="bg-ink py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
