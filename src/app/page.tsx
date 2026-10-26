@@ -81,7 +81,7 @@ export default async function Home() {
             <Link href="/contact/" className={`group ${buttonPrimary}`}>
               Talk to a Security Expert <Arrow />
             </Link>
-            <Link href="/solutions/" className={buttonGhost}>
+            <Link href="/solutions/" className={`${buttonGhost} hover:text-white`}>
               Explore Our Capabilities
             </Link>
           </div>

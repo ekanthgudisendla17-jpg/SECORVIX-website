@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { navLinks, solutions } from "../lib/site";
 import { Logo } from "./ui";
 
@@ -16,6 +16,9 @@ export default function Navbar() {
   const pathname = trim(usePathname());
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const solutionsId = useId();
+  const solutionsButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -41,30 +44,68 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-6 lg:px-8">
-        <Link href="/" aria-label="SECORVIX home" className={focusRing} onClick={() => setOpen(false)}>
+        <Link href="/" aria-label="SECORVIX home" aria-current={isActive("/") ? "page" : undefined} className={focusRing} onClick={() => setOpen(false)}>
           <Logo />
         </Link>
 
         {/* Desktop */}
         <nav aria-label="Main" className="hidden items-center gap-8 xl:flex">
-          <Link href={home.href} className={linkClass(isActive(home.href))}>
+          <Link href={home.href} aria-current={isActive(home.href) ? "page" : undefined} className={linkClass(isActive(home.href))}>
             {home.label}
           </Link>
 
-          <div className="group relative">
-            <button type="button" aria-haspopup="true" className={`flex items-center gap-1.5 ${linkClass(onSolutionsPage)}`}>
+          <div
+            className="group relative"
+            onMouseEnter={() => setIsSolutionsOpen(true)}
+            onMouseLeave={(event) => {
+              if (!event.currentTarget.contains(document.activeElement)) {
+                setIsSolutionsOpen(false);
+              }
+            }}
+            onFocus={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget)) {
+                setIsSolutionsOpen(true);
+              }
+            }}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget)) {
+                setIsSolutionsOpen(false);
+              }
+            }}
+            onKeyDown={(event) => {
+              if (event.key === "Escape" && isSolutionsOpen) {
+                event.preventDefault();
+                event.stopPropagation();
+                solutionsButtonRef.current?.focus();
+                setIsSolutionsOpen(false);
+              }
+              if (event.key === "ArrowDown" && event.target === solutionsButtonRef.current) {
+                event.preventDefault();
+                setIsSolutionsOpen(true);
+              }
+            }}
+          >
+            <button
+              ref={solutionsButtonRef}
+              type="button"
+              aria-expanded={isSolutionsOpen}
+              aria-controls={solutionsId}
+              onClick={() => setIsSolutionsOpen(true)}
+              className={`flex items-center gap-1.5 ${linkClass(onSolutionsPage)}`}
+            >
               Solutions
               <svg aria-hidden="true" viewBox="0 0 12 12" className="h-3 w-3 transition group-hover:rotate-180">
                 <path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" strokeWidth="1.5" />
               </svg>
             </button>
 
-            <div className="invisible absolute left-1/2 top-full w-80 -translate-x-1/2 pt-4 opacity-0 transition duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+            <div id={solutionsId} className={`absolute left-1/2 top-full w-80 -translate-x-1/2 pt-4 transition duration-200 ${isSolutionsOpen ? "visible opacity-100" : "invisible opacity-0"}`}>
               <div className="rounded-2xl border border-white/10 bg-ink/95 p-2 shadow-2xl backdrop-blur-xl">
                 {solutions.map((s) => (
                   <Link
                     key={s.href}
                     href={s.href}
+                    aria-current={isActive(s.href) ? "page" : undefined}
                     className={`block rounded-xl px-4 py-3 text-sm transition ${isActive(s.href) ? "bg-white/10 text-lavender" : "text-white/80 hover:bg-white/5 hover:text-white"} ${focusRing}`}
                   >
                     {s.label}
@@ -75,7 +116,7 @@ export default function Navbar() {
           </div>
 
           {rest.map((link) => (
-            <Link key={link.href} href={link.href} className={linkClass(isActive(link.href))}>
+            <Link key={link.href} href={link.href} aria-current={isActive(link.href) ? "page" : undefined} className={linkClass(isActive(link.href))}>
               {link.label}
             </Link>
           ))}
@@ -83,6 +124,7 @@ export default function Navbar() {
 
         <Link
           href="/contact/"
+          aria-current={isActive("/contact/") ? "page" : undefined}
           className={`hidden min-h-11 items-center rounded-full bg-lavender px-5 text-sm font-semibold text-ink transition hover:bg-white xl:inline-flex ${focusRing}`}
         >
           Talk to an Expert
@@ -115,6 +157,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={isActive(link.href) ? "page" : undefined}
                 onClick={() => setOpen(false)}
                 className={`border-b border-white/10 py-4 text-base ${isActive(link.href) ? "text-lavender" : "text-white/85"} ${focusRing}`}
               >
@@ -129,6 +172,7 @@ export default function Navbar() {
               <Link
                 key={s.href}
                 href={s.href}
+                aria-current={isActive(s.href) ? "page" : undefined}
                 onClick={() => setOpen(false)}
                 className={`py-3 text-base ${isActive(s.href) ? "text-lavender" : "text-white/85"} ${focusRing}`}
               >
@@ -139,6 +183,7 @@ export default function Navbar() {
 
           <Link
             href="/contact/"
+            aria-current={isActive("/contact/") ? "page" : undefined}
             onClick={() => setOpen(false)}
             className={`mt-6 flex min-h-12 items-center justify-center rounded-full bg-lavender font-semibold text-ink ${focusRing}`}
           >
