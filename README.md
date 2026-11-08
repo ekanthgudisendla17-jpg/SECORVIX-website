@@ -1,6 +1,6 @@
 # SECORVIX website
 
-Marketing site for [secorvix-ai.com](https://secorvix-ai.com), built with Next.js (App Router) and Tailwind CSS, exported as static HTML.
+Marketing site for [secorvix-ai.com](https://secorvix-ai.com), built with Next.js (App Router) and Tailwind CSS, hosted on GoDaddy Node.js Hosting.
 
 ## Development
 
@@ -31,16 +31,23 @@ Sign in at **https://secorvix-ai.com/admin/**. Posts are stored on the server in
 
 Forgot the dashboard password? Delete `_data/account.json` in cPanel File Manager; sign-in falls back to the `ADMIN_EMAIL` / `ADMIN_PASSWORD` secrets.
 
-Contact form enquiries are emailed to contact@secorvix-ai.com by `public/api/contact.php`.
+## Contact form
+
+Enquiries are emailed to contact@secorvix-ai.com by `src/app/api/contact/route.ts` over SMTP. Set these in GoDaddy → Manage Secrets:
+
+| Secret | Value |
+|---|---|
+| `SMTP_USER` | Sending mailbox, e.g. contact@secorvix-ai.com |
+| `SMTP_PASS` | That mailbox's password |
+| `SMTP_HOST` / `SMTP_PORT` | Optional. Default `smtpout.secureserver.net` / `465` (GoDaddy email). For Microsoft 365: `smtp.office365.com` / `587` |
+| `CONTACT_TO` | Optional. Inbox that receives enquiries (default contact@secorvix-ai.com) |
 
 ## Deployment
 
-Every push to `main` runs `.github/workflows/deploy.yml`, which builds the site and uploads `out/` to the cPanel `public_html` folder over FTPS. Repository secrets:
+The GoDaddy Node.js app is connected to the `main` branch of this repo:
 
-| Secret | Purpose |
-|---|---|
-| `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD` | FTPS upload |
-| `ADMIN_EMAIL`, `ADMIN_PASSWORD` | First dashboard login (can be changed later under Account) |
-| `GH_DISPATCH_TOKEN` | Fine-grained GitHub token with **Actions: Read and write** on this repo, so the dashboard can start a deploy |
+1. Push changes to `main`.
+2. GoDaddy → My Hosting → SECORVIX-website → **Update Preview**, then check the preview link.
+3. **Publish to Live** when it looks right.
 
-The workflow writes `api/config.php` from these secrets during the build; it is never committed.
+The blog dashboard and `public/api/*.php` were written for the earlier cPanel hosting and do not run on Node.js hosting. `.github/workflows/deploy.yml` (the old cPanel FTPS deploy) now only runs when started by hand.

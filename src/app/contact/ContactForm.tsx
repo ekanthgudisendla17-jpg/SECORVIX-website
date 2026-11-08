@@ -29,7 +29,7 @@ export default function ContactForm() {
     const form = e.currentTarget;
 
     try {
-      const res = await fetch("/api/contact.php", {
+      const res = await fetch("/api/contact/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(Object.fromEntries(new FormData(form))),
