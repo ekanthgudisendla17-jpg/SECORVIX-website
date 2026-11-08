@@ -1,12 +1,15 @@
-// Contact form: emails each enquiry to the SECORVIX inbox over SMTP.
+// Contact form: emails each enquiry to the SECORVIX inbox.
 //   POST /api/contact/  { firstName, lastName, email, phone, company, interest, message, website }
 //
-// Set these in GoDaddy → Manage Secrets (never commit them):
-//   SMTP_USER   mailbox used to send, e.g. contact@secorvix-ai.com
-//   SMTP_PASS   that mailbox's password
-//   SMTP_HOST   optional, default smtpout.secureserver.net (GoDaddy email)
-//   SMTP_PORT   optional, default 465
-//   CONTACT_TO  optional, default contact@secorvix-ai.com
+// GoDaddy Node.js Hosting blocks outbound SMTP (ports 465/587), so the site
+// sends through the Resend email API over HTTPS. Set these in GoDaddy →
+// Manage Secrets (never commit them):
+//   RESEND_API_KEY  API key from resend.com (secorvix-ai.com must be verified there)
+//   CONTACT_FROM    optional, default website@secorvix-ai.com (any address on the verified domain)
+//   CONTACT_TO      optional, default contact@secorvix-ai.com
+//
+// Fallback when RESEND_API_KEY is not set: SMTP via nodemailer, for hosting that allows it.
+//   SMTP_USER, SMTP_PASS, SMTP_HOST (default smtpout.secureserver.net), SMTP_PORT (default 465)
 
 import nodemailer from "nodemailer";
 
@@ -72,21 +75,6 @@ export async function POST(request: Request) {
     return fail("Please enter a valid phone number.");
   }
 
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  if (!user || !pass) {
-    console.error("Contact form: SMTP_USER / SMTP_PASS secrets are not set.");
-    return fail(FALLBACK, 500);
-  }
-
-  const port = Number(process.env.SMTP_PORT || 465);
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || "smtpout.secureserver.net",
-    port,
-    secure: port === 465,
-    auth: { user, pass },
-  });
-
   const sent = new Date().toUTCString();
   const text =
     "New enquiry from secorvix-ai.com\n\n" +
@@ -98,14 +86,50 @@ export async function POST(request: Request) {
     `Message:\n${message}\n\n` +
     `-- Sent ${sent}\n`;
 
+  const subject = `Website enquiry: ${interest} - ${company}`;
+
   try {
-    await transporter.sendMail({
-      from: { name: "SECORVIX Website", address: user },
-      to: CONTACT_TO,
-      replyTo: { name: `${first} ${last}`, address: email },
-      subject: `Website enquiry: ${interest} - ${company}`,
-      text,
-    });
+    const apiKey = process.env.RESEND_API_KEY;
+    if (apiKey) {
+      const from = process.env.CONTACT_FROM || "website@secorvix-ai.com";
+      const res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          from: `SECORVIX Website <${from}>`,
+          to: [CONTACT_TO],
+          reply_to: email,
+          subject,
+          text,
+        }),
+        signal: AbortSignal.timeout(15000),
+      });
+      if (!res.ok) {
+        const detail = (await res.text()).slice(0, 300);
+        throw new Error(`Resend ${res.status}: ${detail}`);
+      }
+    } else {
+      const user = process.env.SMTP_USER;
+      const pass = process.env.SMTP_PASS;
+      if (!user || !pass) {
+        console.error("Contact form: no RESEND_API_KEY (or SMTP_USER / SMTP_PASS) secret is set.");
+        return fail(FALLBACK, 500);
+      }
+      const port = Number(process.env.SMTP_PORT || 465);
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST || "smtpout.secureserver.net",
+        port,
+        secure: port === 465,
+        auth: { user, pass },
+      });
+      await transporter.sendMail({
+        from: { name: "SECORVIX Website", address: user },
+        to: CONTACT_TO,
+        replyTo: { name: `${first} ${last}`, address: email },
+        subject,
+        text,
+      });
+    }
   } catch (err) {
     console.error("Contact form: email failed:", err instanceof Error ? err.message : err);
     return fail(FALLBACK, 500);
