@@ -1,13 +1,10 @@
 name: Deploy to GoDaddy cPanel
 
+# Legacy cPanel deploy. The live site now runs on GoDaddy Node.js Hosting,
+# which pulls from main itself (Update Preview -> Publish to Live), so this
+# workflow only runs when started by hand.
 on:
-  push:
-    branches: [main]
-  # Started by the blog dashboard when a post is published, updated or removed.
   workflow_dispatch:
-  # Hourly check for scheduled posts whose publish time has passed.
-  schedule:
-    - cron: "17 * * * *"
 
 concurrency:
   group: deploy-production
