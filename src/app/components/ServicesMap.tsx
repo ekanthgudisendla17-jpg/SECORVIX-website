@@ -148,10 +148,12 @@ export default function ServicesMap({ className = "" }: { className?: string }) 
       {/* Core */}
       <a href="/solutions/" className={segLink} aria-label="Cybersecurity Solutions">
         <path d={segment(0.01, CORE, 180, 0)} fill="url(#sm-core)" stroke="#010b33" strokeWidth="4" className="transition-opacity duration-200 group-hover:opacity-90" />
-        <g transform={`translate(${CX} ${CY - 92})`} pointerEvents="none">
-          <path d="M0-24 19-17.5v12.5c0 13-8 23-19 27-11-4-19-14-19-27v-12.5z" fill="#021861" />
-          <path d="M5.5-7c-1.3-1.6-3.3-2.5-5.5-2.5-3 0-5.2 1.6-5.2 4 0 5.4 10.9 3 10.9 8.7 0 2.5-2.4 4.3-5.7 4.3-2.5 0-4.6-1-6-2.8" fill="none" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" />
-          <circle cx="12" cy="11" r="3" fill="#DE1110" />
+        {/* SECORVIX logo mark, same artwork as the navbar logo (64-unit grid scaled to 52) */}
+        <g transform={`translate(${CX - 26} ${CY - 122}) scale(${52 / 64})`} pointerEvents="none">
+          <rect width="64" height="64" rx="14" fill="#021861" />
+          <path d="M32 9 50 15v14c0 12-7.6 21.4-18 25-10.4-3.6-18-13-18-25V15z" fill="none" stroke="#9292F0" strokeWidth="3.5" strokeLinejoin="round" />
+          <path d="M38.5 24.5c-1.6-2-4-3-6.7-3-3.6 0-6.3 2-6.3 4.9 0 6.6 13.2 3.7 13.2 10.6 0 3-2.9 5.2-6.9 5.2-3 0-5.6-1.2-7.3-3.4" fill="none" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" />
+          <circle cx="45" cy="45" r="4" fill="#DE1110" />
         </g>
         <text x={CX} y={CY - 40} textAnchor="middle" fontSize="22" fontWeight="700" letterSpacing="2" fill="#010b33" pointerEvents="none">
           <tspan x={CX}>CYBERSECURITY</tspan>
