@@ -3,6 +3,7 @@ import Link from "next/link";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import PostCard from "./components/PostCard";
+import ServicesMap from "./components/ServicesMap";
 import { Arrow, buttonGhost, buttonPrimary, CtaBand, SectionHeader } from "./components/ui";
 import { capabilities, industries } from "./lib/content";
 import { getPosts } from "./lib/posts";
@@ -62,9 +63,7 @@ export default async function Home() {
 
       {/* Hero */}
       <section className="relative isolate flex min-h-[min(100svh,58rem)] items-end overflow-hidden bg-ink">
-        <Image src="/images/hero-home.webp" alt="" fill priority sizes="100vw" className="-z-20 object-cover" />
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(95deg,var(--color-ink)_10%,rgba(1,11,51,0.8)_45%,rgba(2,24,97,0.15)_100%)]" />
-        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 -z-10 h-56 bg-linear-to-t from-ink to-transparent" />
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(60%_45%_at_50%_70%,rgba(146,146,240,0.16),transparent_70%),linear-gradient(180deg,var(--color-ink),var(--color-navy)_140%)]" />
 
         <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-36 sm:px-6 sm:pb-20 lg:px-8">
           <p className="eyebrow text-lavender">Cybersecurity · Integration · AI</p>
@@ -85,6 +84,11 @@ export default async function Home() {
               Explore Our Capabilities
             </Link>
           </div>
+
+          <ServicesMap className="mx-auto mt-16 hidden w-full max-w-5xl md:block" />
+          <p className="mt-4 hidden text-center text-sm text-white/55 md:block">
+            Select any service or capability to explore it.
+          </p>
 
           <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 backdrop-blur-md lg:grid-cols-4">
             {pillars.map(([title, text]) => (

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Arrow, CtaBand, PageHero, SectionHeader } from "../components/ui";
-import { capabilities } from "../lib/content";
+import { capabilities, slugify } from "../lib/content";
 import { solutions } from "../lib/site";
 
 export const metadata: Metadata = {
@@ -37,7 +37,8 @@ export default function SolutionsPage() {
           {capabilities.map(({ title, text, image }, i) => (
             <article
               key={title}
-              className="zoom-media grid overflow-hidden rounded-[2rem] border border-navy/10 bg-mist lg:grid-cols-2"
+              id={slugify(title)}
+              className="zoom-media grid scroll-mt-28 overflow-hidden rounded-[2rem] border border-navy/10 bg-mist lg:grid-cols-2"
             >
               <div className={`relative min-h-64 lg:min-h-80 ${i % 2 ? "lg:order-2" : ""}`}>
                 <Image src={image} alt="" fill sizes="(min-width: 1024px) 640px, 100vw" className="object-cover" />

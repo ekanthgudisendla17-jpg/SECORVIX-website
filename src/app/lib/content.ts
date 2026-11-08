@@ -7,6 +7,10 @@ export const principles = [
   ["X", "eXecution", "Converting strategy into implementation, response and measurable outcomes."],
 ];
 
+// Anchor id for a capability on /solutions/, e.g. "Identity & Access" -> "identity-access".
+export const slugify = (title: string) =>
+  title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 export const capabilities = [
   {
     title: "Network Security",
