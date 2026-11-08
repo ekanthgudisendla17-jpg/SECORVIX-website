@@ -66,8 +66,10 @@ export default async function Home() {
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(60%_45%_at_50%_70%,rgba(146,146,240,0.16),transparent_70%),linear-gradient(180deg,var(--color-ink),var(--color-navy)_140%)]" />
 
         <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-36 sm:px-6 sm:pb-20 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-10">
+          <div>
           <p className="eyebrow text-lavender">Cybersecurity · Integration · AI</p>
-          <h1 className="mt-6 max-w-4xl text-balance text-[clamp(2.6rem,7vw,5.75rem)] font-semibold leading-[0.98] tracking-[-0.05em]">
+          <h1 className="mt-6 max-w-4xl text-balance text-[clamp(2.6rem,7vw,5.75rem)] font-semibold leading-[0.98] tracking-[-0.05em] lg:text-[clamp(2.6rem,3.9vw,4rem)]">
             Engineering Cyber Resilience for the{" "}
             <span className="bg-linear-to-r from-lavender to-white bg-clip-text text-transparent">Digital Enterprise</span>
           </h1>
@@ -84,11 +86,15 @@ export default async function Home() {
               Explore Our Capabilities
             </Link>
           </div>
+          </div>
 
-          <ServicesMap className="mx-auto mt-16 hidden w-full max-w-5xl md:block" />
-          <p className="mt-4 hidden text-center text-sm text-white/55 md:block">
-            Select any service or capability to explore it.
-          </p>
+          <div className="hidden md:block">
+            <ServicesMap className="mx-auto w-full max-w-3xl lg:max-w-none" />
+            <p className="mt-3 text-center text-sm text-white/55">
+              Select any service or capability to explore it.
+            </p>
+          </div>
+          </div>
 
           <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 backdrop-blur-md lg:grid-cols-4">
             {pillars.map(([title, text]) => (
