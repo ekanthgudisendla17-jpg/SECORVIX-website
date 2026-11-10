@@ -115,7 +115,7 @@ export default function ServicesMap({ className = "" }: { className?: string }) 
             <text fontSize="25" fontWeight="700" fill="#021861" pointerEvents="none">
               <textPath href={`#sm-svc-t-${i}`} startOffset="50%" textAnchor="middle">{s.title}</textPath>
             </text>
-            <text fontSize="16" fill="#021861" fillOpacity="0.75" pointerEvents="none">
+            <text fontSize="16" fill="#021861" fillOpacity="0.75" pointerEvents="none" className="max-sm:hidden">
               <textPath href={`#sm-svc-s-${i}`} startOffset="50%" textAnchor="middle">{s.sub}</textPath>
             </text>
           </a>

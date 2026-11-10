@@ -88,10 +88,10 @@ export default async function Home() {
           </div>
           </div>
 
-          <div className="hidden md:block">
+          <div className="-mx-3 sm:mx-0">
             <ServicesMap className="mx-auto w-full max-w-3xl lg:max-w-none" />
             <p className="mt-3 text-center text-sm text-white/55">
-              Select any service or capability to explore it.
+              <span className="sm:hidden">Tap</span><span className="hidden sm:inline">Select</span> any service or capability to explore it.
             </p>
           </div>
           </div>
