@@ -27,7 +27,7 @@ export const navLinks = [
 
 // Update these with the official SECORVIX profile URLs.
 export const socialLinks = [
-  { name: "LinkedIn", href: "https://www.linkedin.com/company/secorvix" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/secorvix-ai/" },
   { name: "Instagram", href: "https://www.instagram.com/secorvix" },
   { name: "Facebook", href: "https://www.facebook.com/secorvix" },
   { name: "YouTube", href: "https://www.youtube.com/@secorvix" },
