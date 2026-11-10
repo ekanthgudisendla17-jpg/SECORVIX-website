@@ -1,5 +1,14 @@
 export const siteUrl = "https://secorvix-ai.com";
 
+// Company contact details shown in the footer and on the Contact page.
+// To show a phone number, fill in `phone` (e.g. "+91 98765 43210"); leave it empty to hide it.
+export const contact = {
+  email: "contact@secorvix-ai.com",
+  phone: "",
+};
+
+export const telHref = (phone: string) => `tel:${phone.replace(/[^\d+]/g, "")}`;
+
 export const solutions = [
   { href: "/ai-cyber-intelligence/", label: "AI & Cyber Intelligence" },
   { href: "/solutions/", label: "Cybersecurity Solutions" },

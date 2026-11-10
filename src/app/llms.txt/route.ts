@@ -1,6 +1,6 @@
 import { capabilities, industries } from "../lib/content";
 import { getPosts } from "../lib/posts";
-import { siteUrl } from "../lib/site";
+import { contact, siteUrl } from "../lib/site";
 
 // /llms.txt — a plain-Markdown site summary for AI assistants (https://llmstxt.org).
 // Regenerated on every build, so new blog posts are listed automatically.
@@ -44,6 +44,12 @@ export async function GET() {
     "",
     link("SECORVIX Blog", "/blog/", "Articles on security integration, AI in security operations, Zero Trust and cyber resilience."),
     ...posts.map((p) => link(p.title, `/blog/${p.slug}/`, p.summary)),
+    "",
+    "## Contact",
+    "",
+    `- Email: ${contact.email}`,
+    ...(contact.phone ? [`- Phone: ${contact.phone}`] : []),
+    `- Contact form: ${siteUrl}/contact/`,
     "",
     "## Optional",
     "",

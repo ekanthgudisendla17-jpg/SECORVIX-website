@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navLinks, socialLinks, solutions, type SocialName } from "../lib/site";
+import { contact, navLinks, socialLinks, solutions, telHref, type SocialName } from "../lib/site";
 import { Logo } from "./ui";
 
 const focusRing =
@@ -61,6 +61,20 @@ export default function Footer() {
               Planning a security architecture, SOC or cloud migration? Talk to
               our team.
             </p>
+            <ul className="mt-5 space-y-2 text-sm">
+              <li>
+                <a href={`mailto:${contact.email}`} className={`text-white/80 underline decoration-white/20 underline-offset-4 transition hover:text-lavender hover:decoration-lavender ${focusRing}`}>
+                  {contact.email}
+                </a>
+              </li>
+              {contact.phone && (
+                <li>
+                  <a href={telHref(contact.phone)} className={`text-white/80 transition hover:text-lavender ${focusRing}`}>
+                    {contact.phone}
+                  </a>
+                </li>
+              )}
+            </ul>
             <Link
               href="/contact/"
               className={`mt-6 inline-flex min-h-11 items-center rounded-full border border-white/20 px-5 text-sm font-semibold transition hover:border-lavender hover:text-lavender ${focusRing}`}

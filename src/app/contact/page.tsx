@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { PageHero } from "../components/ui";
 import ContactForm from "./ContactForm";
+import { contact, telHref } from "../lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -13,8 +14,8 @@ export const metadata: Metadata = {
 
 const topics = [
   ["Cybersecurity", "Security architecture, assessments and protection."],
-  ["Integration", "Technology integration, modernization and optimization."],
   ["Managed Security", "Monitoring, detection, response and security operations."],
+  ["Integration", "Technology integration, modernization and optimization."],
 ];
 
 export default function ContactPage() {
@@ -60,6 +61,26 @@ export default function ContactPage() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-10 border-t border-navy/10 pt-8">
+              <p className="text-sm font-semibold">Prefer to reach us directly?</p>
+              <ul className="mt-4 space-y-3 text-sm">
+                <li>
+                  <a href={`mailto:${contact.email}`} className="group inline-flex items-center gap-3 font-medium text-navy hover:text-signal">
+                    <MailIcon />
+                    <span className="underline decoration-navy/20 underline-offset-4 group-hover:decoration-signal">{contact.email}</span>
+                  </a>
+                </li>
+                {contact.phone && (
+                  <li>
+                    <a href={telHref(contact.phone)} className="group inline-flex items-center gap-3 font-medium text-navy hover:text-signal">
+                      <PhoneIcon />
+                      <span className="underline decoration-navy/20 underline-offset-4 group-hover:decoration-signal">{contact.phone}</span>
+                    </a>
+                  </li>
+                )}
+              </ul>
+            </div>
           </div>
 
           <div className="min-w-0 rounded-[2rem] border border-navy/10 bg-white p-6 shadow-[0_30px_80px_-40px_rgba(2,24,97,0.45)] sm:p-10">
@@ -70,5 +91,22 @@ export default function ContactPage() {
 
       <Footer />
     </main>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 shrink-0 fill-none stroke-current" strokeWidth={1.6}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3.5 6.5 8.5 6.5 8.5-6.5" />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 shrink-0 fill-none stroke-current" strokeWidth={1.6}>
+      <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />
+    </svg>
   );
 }
