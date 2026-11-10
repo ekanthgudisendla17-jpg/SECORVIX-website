@@ -1,10 +1,10 @@
 export const siteUrl = "https://secorvix-ai.com";
 
 export const solutions = [
+  { href: "/ai-cyber-intelligence/", label: "AI & Cyber Intelligence" },
   { href: "/solutions/", label: "Cybersecurity Solutions" },
   { href: "/security-integration/", label: "Security Integration" },
   { href: "/managed-security/", label: "Managed Security" },
-  { href: "/ai-cyber-intelligence/", label: "AI & Cyber Intelligence" },
   { href: "/cyber-resilience/", label: "Cyber Resilience" },
 ];
 

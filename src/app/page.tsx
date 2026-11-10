@@ -10,9 +10,9 @@ import { getPosts } from "./lib/posts";
 
 const pillars = [
   ["Security", "Protect assets, identities and data."],
-  ["Integration", "Make every technology work together."],
   ["Intelligence", "AI-assisted detection and analysis."],
   ["Resilience", "Withstand, respond and recover."],
+  ["Integration", "Make every technology work together."],
 ];
 
 // One tile per service page; the detail lives on those pages.
