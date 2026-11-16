@@ -44,7 +44,7 @@ export default function ManagedSecurityPage() {
           <SectionHeader tone="light" eyebrow="Services" title="Managed security services" />
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {services.map(([title, text], i) => (
-              <div key={title} className="rounded-3xl border border-navy/10 bg-white p-7 transition hover:-translate-y-1 hover:border-lavender hover:shadow-[0_25px_60px_-35px_rgba(2,24,97,0.55)]">
+              <div key={title} className="rounded-3xl border border-navy/10 bg-white p-7 transition hover:-translate-y-1 hover:border-teal">
                 <span className="text-xs font-semibold tracking-[0.2em] text-signal">{String(i + 1).padStart(2, "0")}</span>
                 <h2 className="mt-4 text-xl font-semibold">{title}</h2>
                 <p className="mt-2 text-sm leading-7 text-navy/70">{text}</p>

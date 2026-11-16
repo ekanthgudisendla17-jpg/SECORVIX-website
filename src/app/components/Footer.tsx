@@ -3,7 +3,7 @@ import { contact, navLinks, socialLinks, solutions, telHref, type SocialName } f
 import { Logo } from "./ui";
 
 const focusRing =
-  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lavender";
+  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan";
 
 const socialIcons: Record<SocialName, string> = {
   LinkedIn:
@@ -18,8 +18,8 @@ const socialIcons: Record<SocialName, string> = {
 
 export default function Footer() {
   return (
-    <footer className="relative mt-auto overflow-hidden border-t border-white/10 bg-ink text-white">
-      <div aria-hidden="true" className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-lavender/10 blur-[120px]" />
+    <footer className="relative mt-auto overflow-hidden border-t border-line/20 bg-abyss text-white">
+      <div aria-hidden="true" className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-line/10 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-5 pb-10 pt-20 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
@@ -41,7 +41,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`SECORVIX on ${name}`}
-                    className={`flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition hover:-translate-y-0.5 hover:border-lavender hover:bg-lavender hover:text-ink ${focusRing}`}
+                    className={`flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition hover:-translate-y-0.5 hover:border-cyan hover:bg-cyan hover:text-navy ${focusRing}`}
                   >
                     <svg aria-hidden="true" viewBox="0 0 24 24" className="h-[18px] w-[18px] fill-current">
                       <path d={socialIcons[name]} />
@@ -56,20 +56,20 @@ export default function Footer() {
           <FooterColumn title="Company" links={navLinks} />
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lavender">Get in touch</p>
+            <p className="mono-label text-lavender">Get in touch</p>
             <p className="mt-6 text-sm leading-7 text-white/60">
               Planning a security architecture, SOC or cloud migration? Talk to
               our team.
             </p>
             <ul className="mt-5 space-y-2 text-sm">
               <li>
-                <a href={`mailto:${contact.email}`} className={`text-white/80 underline decoration-white/20 underline-offset-4 transition hover:text-lavender hover:decoration-lavender ${focusRing}`}>
+                <a href={`mailto:${contact.email}`} className={`text-white/80 underline decoration-white/20 underline-offset-4 transition hover:text-cyan hover:decoration-cyan ${focusRing}`}>
                   {contact.email}
                 </a>
               </li>
               {contact.phone && (
                 <li>
-                  <a href={telHref(contact.phone)} className={`text-white/80 transition hover:text-lavender ${focusRing}`}>
+                  <a href={telHref(contact.phone)} className={`text-white/80 transition hover:text-cyan ${focusRing}`}>
                     {contact.phone}
                   </a>
                 </li>
@@ -77,7 +77,7 @@ export default function Footer() {
             </ul>
             <Link
               href="/contact/"
-              className={`mt-6 inline-flex min-h-11 items-center rounded-full border border-white/20 px-5 text-sm font-semibold transition hover:border-lavender hover:text-lavender ${focusRing}`}
+              className={`mt-6 inline-flex min-h-11 items-center rounded-full border border-white/20 px-5 text-sm font-semibold transition hover:border-cyan hover:text-cyan ${focusRing}`}
             >
               Contact SECORVIX
             </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
             <a href="/sitemap.xml" className={`transition hover:text-white ${focusRing}`}>
               Sitemap
             </a>
-            <p className="tracking-[0.2em]">SECURE · INTEGRATE · RESPOND · EVOLVE</p>
+            <p className="font-mono tracking-[0.2em]">SECURE · INTEGRATE · RESPOND · EVOLVE</p>
           </div>
         </div>
       </div>
@@ -101,7 +101,7 @@ export default function Footer() {
 function FooterColumn({ title, links }: { title: string; links: { href: string; label: string }[] }) {
   return (
     <div>
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lavender">{title}</p>
+      <p className="mono-label text-lavender">{title}</p>
       <ul className="mt-6 space-y-3 text-sm">
         {links.map((link) => (
           <li key={link.href}>

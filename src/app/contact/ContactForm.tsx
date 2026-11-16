@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const fieldClass =
-  "min-h-12 w-full min-w-0 rounded-xl border border-navy/15 bg-white px-4 py-3 text-base text-ink placeholder:text-navy/40 outline-none transition focus:border-navy focus:ring-4 focus:ring-lavender/40";
+  "min-h-12 w-full min-w-0 rounded-xl border border-navy/15 bg-white px-4 py-3 text-base text-ink placeholder:text-navy/40 outline-none transition focus:border-teal focus:ring-4 focus:ring-cyan/30";
 
 const labelClass = "mb-2 block text-sm font-medium text-ink";
 

@@ -1,6 +1,6 @@
 // Home hero diagram: every SECORVIX service and capability in one layered half-circle.
 // Each segment is a link to its page (services) or its section on /solutions/ (capabilities).
-// Original vector artwork in the site palette: navy, lavender and small red accents.
+// Original vector artwork in the site palette: navy, lavender, cyan data lines and small red accents.
 
 import { capabilities, slugify } from "../lib/content";
 
@@ -53,9 +53,9 @@ function arc(r: number, a1: number, a2: number) {
 
 const segLink = "group cursor-pointer outline-none";
 const capFill =
-  "transition-colors duration-200 group-hover:fill-[#2b3aa8] group-focus-visible:fill-[#2b3aa8] group-focus-visible:stroke-white";
+  "transition-colors duration-200 group-hover:fill-[#2b3aa8] group-focus-visible:fill-[#2b3aa8] group-focus-visible:stroke-[#22D3EE]";
 const svcFill =
-  "transition-colors duration-200 group-hover:fill-[#e4e4fd] group-focus-visible:fill-[#e4e4fd] group-focus-visible:stroke-[#9292F0]";
+  "transition-colors duration-200 group-hover:fill-[#e4e4fd] group-focus-visible:fill-[#e4e4fd] group-focus-visible:stroke-[#0E7490]";
 
 export default function ServicesMap({ className = "" }: { className?: string }) {
   const capStep = 180 / capabilities.length;
@@ -75,8 +75,8 @@ export default function ServicesMap({ className = "" }: { className?: string }) 
           <stop offset="1" stopColor="#eef0fb" />
         </linearGradient>
         <linearGradient id="sm-cap" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#1d2c94" />
-          <stop offset="1" stopColor="#14227d" />
+          <stop offset="0" stopColor="#1a3696" />
+          <stop offset="1" stopColor="#112D84" />
         </linearGradient>
         <filter id="sm-glow" x="-10%" y="-10%" width="120%" height="120%">
           <feGaussianBlur stdDeviation="14" />
@@ -97,6 +97,9 @@ export default function ServicesMap({ className = "" }: { className?: string }) 
 
       {/* Soft glow behind the dome */}
       <path d={segment(0.01, RIM2_OUT, 180, 0)} fill="#9292F0" opacity="0.3" filter="url(#sm-glow)" />
+
+      {/* Animated cyan data line around the dome */}
+      <path d={arc(RIM2_OUT + 12, 180, 0)} fill="none" stroke="#22D3EE" strokeWidth="2" strokeLinecap="round" opacity="0.85" className="flow-line" />
 
       {/* Outer rim */}
       <path d={segment(SVC_OUT, RIM2_OUT, 180, 0)} fill="#ffffff" />
@@ -124,7 +127,7 @@ export default function ServicesMap({ className = "" }: { className?: string }) 
 
       {/* Inner rim */}
       <path d={segment(CAP_OUT, RIM1_OUT, 180, 0)} fill="#9292F0" />
-      <text fontSize="15" fontWeight="700" letterSpacing="3" fill="#010b33">
+      <text fontSize="15" fontWeight="700" letterSpacing="3" fill="#021861">
         <textPath href="#sm-rim1" startOffset="50%" textAnchor="middle">CAPABILITIES ACROSS EVERY LAYER</textPath>
       </text>
 
@@ -136,7 +139,7 @@ export default function ServicesMap({ className = "" }: { className?: string }) 
         const [l1, l2] = capLabels[title] ?? [title, ""];
         return (
           <a key={title} href={`/solutions/#${slugify(title)}`} className={segLink} aria-label={title}>
-            <path d={segment(CORE, CAP_OUT, a1, a2)} fill="url(#sm-cap)" stroke="#010b33" strokeWidth="3" className={capFill} />
+            <path d={segment(CORE, CAP_OUT, a1, a2)} fill="url(#sm-cap)" stroke="#021861" strokeWidth="3" className={capFill} />
             <text x={f(tx)} y={f(ty)} textAnchor="middle" fontSize="20" fontWeight="600" fill="#fff" pointerEvents="none">
               <tspan x={f(tx)} dy="-5">{l1}</tspan>
               <tspan x={f(tx)} dy="24">{l2}</tspan>
@@ -147,7 +150,7 @@ export default function ServicesMap({ className = "" }: { className?: string }) 
 
       {/* Core */}
       <a href="/solutions/" className={segLink} aria-label="Cybersecurity Solutions">
-        <path d={segment(0.01, CORE, 180, 0)} fill="url(#sm-core)" stroke="#010b33" strokeWidth="4" className="transition-opacity duration-200 group-hover:opacity-90" />
+        <path d={segment(0.01, CORE, 180, 0)} fill="url(#sm-core)" stroke="#021861" strokeWidth="4" className="transition-opacity duration-200 group-hover:opacity-90" />
         {/* SECORVIX logo mark, same artwork as the navbar logo (64-unit grid scaled to 52) */}
         <g transform={`translate(${CX - 26} ${CY - 122}) scale(${52 / 64})`} pointerEvents="none">
           <rect width="64" height="64" rx="14" fill="#021861" />
@@ -155,11 +158,14 @@ export default function ServicesMap({ className = "" }: { className?: string }) 
           <path d="M38.5 24.5c-1.6-2-4-3-6.7-3-3.6 0-6.3 2-6.3 4.9 0 6.6 13.2 3.7 13.2 10.6 0 3-2.9 5.2-6.9 5.2-3 0-5.6-1.2-7.3-3.4" fill="none" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" />
           <circle cx="45" cy="45" r="4" fill="#DE1110" />
         </g>
-        <text x={CX} y={CY - 40} textAnchor="middle" fontSize="22" fontWeight="700" letterSpacing="2" fill="#010b33" pointerEvents="none">
+        <text x={CX} y={CY - 40} textAnchor="middle" fontSize="22" fontWeight="700" letterSpacing="2" fill="#021861" pointerEvents="none">
           <tspan x={CX}>CYBERSECURITY</tspan>
           <tspan x={CX} dy="27">SOLUTIONS</tspan>
         </text>
       </a>
+
+      {/* Animated cyan line between capabilities and core */}
+      <path d={arc(CORE + 1, 180, 0)} fill="none" stroke="#22D3EE" strokeWidth="3" strokeLinecap="round" className="flow-line" pointerEvents="none" />
 
       {/* Base bar */}
       <rect x="20" y={CY} width="960" height="70" rx="14" fill="#ffffff" />

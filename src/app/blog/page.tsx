@@ -35,7 +35,7 @@ export default async function BlogPage() {
           {featured && (
             <Link
               href={`/blog/${featured.slug}/`}
-              className="zoom-media group grid overflow-hidden rounded-[2rem] bg-white shadow-[0_30px_80px_-40px_rgba(2,24,97,0.45)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy lg:grid-cols-2"
+              className="zoom-media group grid overflow-hidden rounded-[2rem] border border-navy/10 bg-white transition hover:border-teal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy lg:grid-cols-2"
             >
               <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[420px]">
                 <Image src={coverOf(featured)} alt="" fill sizes="(min-width: 1024px) 640px, 100vw" className="object-cover" />

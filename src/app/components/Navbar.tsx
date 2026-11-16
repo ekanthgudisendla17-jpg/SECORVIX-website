@@ -7,7 +7,7 @@ import { navLinks, solutions } from "../lib/site";
 import { Logo } from "./ui";
 
 const focusRing =
-  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lavender";
+  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan";
 
 // usePathname() may or may not carry the trailing slash; compare without it.
 const trim = (path: string) => path.replace(/\/$/, "") || "/";
@@ -39,7 +39,7 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled || open
-          ? "border-b border-white/10 bg-ink/85 shadow-[0_10px_40px_-20px_rgba(0,0,0,0.8)] backdrop-blur-xl"
+          ? "border-b border-line/20 bg-navy/90 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -100,13 +100,13 @@ export default function Navbar() {
             </button>
 
             <div id={solutionsId} className={`absolute left-1/2 top-full w-80 -translate-x-1/2 pt-4 transition duration-200 ${isSolutionsOpen ? "visible opacity-100" : "invisible opacity-0"}`}>
-              <div className="rounded-2xl border border-white/10 bg-ink/95 p-2 shadow-2xl backdrop-blur-xl">
+              <div className="rounded-2xl border border-line/30 bg-navy/95 p-2 backdrop-blur-xl">
                 {solutions.map((s) => (
                   <Link
                     key={s.href}
                     href={s.href}
                     aria-current={isActive(s.href) ? "page" : undefined}
-                    className={`block rounded-xl px-4 py-3 text-sm transition ${isActive(s.href) ? "bg-white/10 text-lavender" : "text-white/80 hover:bg-white/5 hover:text-white"} ${focusRing}`}
+                    className={`block rounded-xl px-4 py-3 text-sm transition ${isActive(s.href) ? "bg-white/10 text-cyan" : "text-white/80 hover:bg-white/5 hover:text-white"} ${focusRing}`}
                   >
                     {s.label}
                   </Link>
@@ -125,7 +125,7 @@ export default function Navbar() {
         <Link
           href="/contact/"
           aria-current={isActive("/contact/") ? "page" : undefined}
-          className={`hidden min-h-11 items-center rounded-full bg-lavender px-5 text-sm font-semibold text-ink transition hover:bg-white xl:inline-flex ${focusRing}`}
+          className={`hidden min-h-11 items-center rounded-full bg-cyan px-5 text-sm font-semibold text-navy transition hover:bg-white xl:inline-flex ${focusRing}`}
         >
           Talk to an Expert
         </Link>
@@ -159,14 +159,14 @@ export default function Navbar() {
                 href={link.href}
                 aria-current={isActive(link.href) ? "page" : undefined}
                 onClick={() => setOpen(false)}
-                className={`border-b border-white/10 py-4 text-base ${isActive(link.href) ? "text-lavender" : "text-white/85"} ${focusRing}`}
+                className={`border-b border-white/10 py-4 text-base ${isActive(link.href) ? "text-cyan" : "text-white/85"} ${focusRing}`}
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Solutions</p>
+          <p className="mt-6 mono-label text-lavender/70">Solutions</p>
           <div className="mt-2 flex flex-col">
             {solutions.map((s) => (
               <Link
@@ -174,7 +174,7 @@ export default function Navbar() {
                 href={s.href}
                 aria-current={isActive(s.href) ? "page" : undefined}
                 onClick={() => setOpen(false)}
-                className={`py-3 text-base ${isActive(s.href) ? "text-lavender" : "text-white/85"} ${focusRing}`}
+                className={`py-3 text-base ${isActive(s.href) ? "text-cyan" : "text-white/85"} ${focusRing}`}
               >
                 {s.label}
               </Link>
@@ -185,7 +185,7 @@ export default function Navbar() {
             href="/contact/"
             aria-current={isActive("/contact/") ? "page" : undefined}
             onClick={() => setOpen(false)}
-            className={`mt-6 flex min-h-12 items-center justify-center rounded-full bg-lavender font-semibold text-ink ${focusRing}`}
+            className={`mt-6 flex min-h-12 items-center justify-center rounded-full bg-cyan font-semibold text-navy ${focusRing}`}
           >
             Talk to an Expert
           </Link>

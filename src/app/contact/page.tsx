@@ -83,7 +83,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="min-w-0 rounded-[2rem] border border-navy/10 bg-white p-6 shadow-[0_30px_80px_-40px_rgba(2,24,97,0.45)] sm:p-10">
+          <div className="min-w-0 rounded-[2rem] border border-navy/10 bg-white p-6 sm:p-10">
             <ContactForm />
           </div>
         </div>

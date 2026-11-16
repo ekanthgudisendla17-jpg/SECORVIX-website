@@ -100,10 +100,10 @@ export default function SolutionsPage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="group flex min-h-36 flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-lavender hover:bg-white/[0.06]"
+                className="group flex min-h-36 flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-cyan hover:bg-white/[0.06]"
               >
                 <span className="text-lg font-semibold">{s.label}</span>
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-lavender">
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan">
                   Learn more <Arrow />
                 </span>
               </Link>

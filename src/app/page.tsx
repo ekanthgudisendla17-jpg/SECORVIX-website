@@ -21,25 +21,21 @@ const services = [
     title: "Security Integration",
     text: "Turn disconnected security tools into one vendor-neutral, integrated architecture.",
     href: "/security-integration/",
-    image: "/images/hero-integration.webp",
   },
   {
     title: "Managed Security",
     text: "SOC, SIEM, MDR, threat hunting and incident response — around the clock.",
     href: "/managed-security/",
-    image: "/images/hero-managed.webp",
   },
   {
     title: "AI & Cyber Intelligence",
     text: "AI-assisted detection, analysis and response that augments human expertise.",
     href: "/ai-cyber-intelligence/",
-    image: "/images/hero-ai.webp",
   },
   {
     title: "Cyber Resilience",
     text: "Anticipate, withstand, respond to and recover from cyber incidents.",
     href: "/cyber-resilience/",
-    image: "/images/hero-resilience.webp",
   },
 ];
 
@@ -63,15 +59,16 @@ export default async function Home() {
 
       {/* Hero */}
       <section className="relative isolate flex min-h-[min(100svh,58rem)] items-end overflow-hidden bg-ink">
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(60%_45%_at_50%_70%,rgba(146,146,240,0.16),transparent_70%),linear-gradient(180deg,var(--color-ink),var(--color-navy)_140%)]" />
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(60%_45%_at_50%_70%,rgba(34,211,238,0.10),transparent_70%),linear-gradient(180deg,var(--color-navy),var(--color-ink)_55%)]" />
+        <div aria-hidden="true" className="tech-grid absolute inset-0 -z-10 [mask-image:linear-gradient(to_bottom,black,transparent_95%)]" />
 
         <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-36 sm:px-6 sm:pb-20 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-10">
           <div>
           <p className="eyebrow text-lavender">Cybersecurity · Integration · AI</p>
-          <h1 className="mt-6 max-w-4xl text-balance text-[clamp(2.6rem,7vw,5.75rem)] font-semibold leading-[0.98] tracking-[-0.05em] lg:text-[clamp(2.6rem,3.9vw,4rem)]">
+          <h1 className="mt-6 max-w-4xl text-balance text-[clamp(2.6rem,7vw,5.75rem)] font-semibold leading-[0.98] tracking-[-0.055em] lg:text-[clamp(2.6rem,3.9vw,4rem)]">
             Engineering Cyber Resilience for the{" "}
-            <span className="bg-linear-to-r from-lavender to-white bg-clip-text text-transparent">Digital Enterprise</span>
+            <span className="text-cyan">Digital Enterprise</span>
           </h1>
           <p className="mt-8 max-w-2xl text-base leading-8 text-white/75 sm:text-lg">
             SECORVIX brings together cybersecurity, system integration,
@@ -96,11 +93,11 @@ export default async function Home() {
           </div>
           </div>
 
-          <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 backdrop-blur-md lg:grid-cols-4">
+          <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line/30 bg-line/30 lg:grid-cols-4">
             {pillars.map(([title, text]) => (
-              <div key={title} className="bg-ink/60 p-5 sm:p-6">
+              <div key={title} className="bg-navy p-5 sm:p-6">
                 <dt className="flex items-center gap-2 text-sm font-semibold text-white">
-                  <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-signal" />
+                  <span aria-hidden="true" className="h-1.5 w-1.5 bg-signal" />
                   {title}
                 </dt>
                 <dd className="mt-2 text-sm leading-6 text-white/60">{text}</dd>
@@ -111,7 +108,7 @@ export default async function Home() {
       </section>
 
       {/* Capabilities */}
-      <section id="solutions" className="bg-ink py-20 sm:py-24">
+      <section id="solutions" className="bg-navy py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeader
@@ -126,11 +123,11 @@ export default async function Home() {
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map(({ title, text, image }, i) => (
-              <article key={title} className="zoom-media group relative isolate flex min-h-[21rem] flex-col justify-end overflow-hidden rounded-3xl border border-white/10">
+              <article key={title} className="zoom-media group relative isolate flex min-h-[21rem] flex-col justify-end overflow-hidden rounded-3xl border border-line/25 transition hover:border-cyan/70">
                 <Image src={image} alt="" fill sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw" className="-z-20 object-cover" />
-                <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-t from-ink via-ink/80 to-ink/10" />
+                <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-t from-navy via-navy/80 to-navy/10" />
                 <div className="p-7">
-                  <span className="text-xs font-semibold tracking-[0.2em] text-lavender">{pad(i)}</span>
+                  <span className="mono-label text-cyan">{pad(i)}</span>
                   <h3 className="mt-3 text-2xl font-semibold tracking-tight">{title}</h3>
                   <p className="mt-3 text-sm leading-7 text-white/70">{text}</p>
                 </div>
@@ -141,32 +138,29 @@ export default async function Home() {
       </section>
 
       {/* How we help */}
-      <section id="services" className="bg-mist py-20 text-ink sm:py-24">
+      <section id="services" className="relative isolate bg-ink py-20 sm:py-24">
+        <div aria-hidden="true" className="tech-grid absolute inset-0 -z-10" />
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <SectionHeader
-            tone="light"
             eyebrow="How We Help"
-            title="From Integration to Continuous Protection"
+            title={<>From Integration to <span className="text-cyan">Continuous Protection</span></>}
             intro={<p>Four connected services that take you from a fragmented security stack to a resilient, intelligent operating model.</p>}
           />
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((service) => (
+          <div className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-line/40 bg-line/40 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((service, i) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className="zoom-media group flex flex-col overflow-hidden rounded-3xl border border-navy/10 bg-white transition hover:-translate-y-1 hover:shadow-[0_25px_60px_-35px_rgba(2,24,97,0.55)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy"
+                className="group relative flex flex-col bg-navy p-7 transition hover:bg-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-cyan"
               >
-                <div className="relative aspect-[4/3]">
-                  <Image src={service.image} alt="" fill sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw" className="object-cover" />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-xl font-semibold tracking-tight">{service.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-7 text-navy/70">{service.text}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-navy">
-                    Learn more <Arrow />
-                  </span>
-                </div>
+                <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-cyan transition-transform duration-500 group-hover:scale-x-100" />
+                <span className="mono-label text-cyan">{pad(i)}</span>
+                <h3 className="mt-8 text-xl font-semibold tracking-tight">{service.title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-7 text-white/70">{service.text}</p>
+                <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-lavender group-hover:text-cyan">
+                  Learn more <Arrow />
+                </span>
               </Link>
             ))}
           </div>
@@ -174,7 +168,7 @@ export default async function Home() {
       </section>
 
       {/* Industries */}
-      <section id="industries" className="bg-white py-20 text-ink sm:py-24">
+      <section id="industries" className="bg-mist py-20 text-ink sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeader
@@ -183,7 +177,7 @@ export default async function Home() {
               title="Cybersecurity Designed Around Your Industry"
               intro={<p>Different industries face different risks, regulations and operational challenges.</p>}
             />
-            <Link href="/industries/" className="group inline-flex shrink-0 items-center gap-2 font-semibold text-navy">
+            <Link href="/industries/" className="group inline-flex shrink-0 items-center gap-2 font-semibold text-teal">
               All Industries <Arrow />
             </Link>
           </div>
@@ -196,7 +190,7 @@ export default async function Home() {
                 className={`zoom-media group relative isolate flex min-h-56 flex-col justify-end overflow-hidden rounded-3xl p-6 text-white ${i === 0 ? "sm:col-span-2 lg:row-span-2 lg:min-h-full" : ""} ${i >= 5 ? "lg:col-span-2" : ""}`}
               >
                 <Image src={industry.image} alt="" fill sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw" className="-z-20 object-cover" />
-                <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-t from-ink/95 via-ink/50 to-transparent" />
+                <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-t from-navy/95 via-navy/50 to-transparent" />
                 <h3 className={`font-semibold tracking-tight ${i === 0 ? "text-3xl" : "text-xl"}`}>{industry.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-white/75">{industry.summary}</p>
               </Link>
@@ -206,12 +200,13 @@ export default async function Home() {
       </section>
 
       {/* Why SECORVIX */}
-      <section className="bg-ink py-20 sm:py-24">
+      <section className="relative isolate bg-ink py-20 sm:py-24">
+        <div aria-hidden="true" className="tech-grid absolute inset-0 -z-10" />
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16 lg:px-8">
           <div>
             <SectionHeader
               eyebrow="Why SECORVIX"
-              title="What Makes SECORVIX Different?"
+              title={<>What Makes <span className="text-cyan">SECORVIX</span> Different?</>}
               intro={<p>More than a cybersecurity services company — an integration and transformation partner for the digital enterprise.</p>}
             />
             <Link href="/about/" className={`group mt-8 ${buttonGhost}`}>
@@ -219,10 +214,10 @@ export default async function Home() {
             </Link>
           </div>
 
-          <div className="grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-px overflow-hidden rounded-3xl border border-line/30 bg-line/30 sm:grid-cols-2 lg:grid-cols-3">
             {differentiators.map(([title, text]) => (
-              <div key={title} className="bg-ink p-6 transition hover:bg-navy/60">
-                <span aria-hidden="true" className="block h-1 w-8 rounded-full bg-signal" />
+              <div key={title} className="bg-navy p-6 transition hover:bg-ink">
+                <span aria-hidden="true" className="block h-1.5 w-1.5 bg-signal" />
                 <h3 className="mt-4 text-lg font-semibold">{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-white/65">{text}</p>
               </div>
@@ -233,17 +228,17 @@ export default async function Home() {
 
       {/* Blog */}
       {posts.length > 0 && (
-        <section className="border-t border-white/10 bg-ink py-20 sm:py-24">
+        <section className="bg-mist py-20 text-ink sm:py-24">
           <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-              <SectionHeader eyebrow="Blog" title="Latest from the SECORVIX Blog" />
-              <Link href="/blog/" className={`group shrink-0 ${buttonGhost}`}>
+              <SectionHeader tone="light" eyebrow="Blog" title="Latest from the SECORVIX Blog" />
+              <Link href="/blog/" className="group inline-flex shrink-0 items-center gap-2 font-semibold text-teal">
                 View all posts <Arrow />
               </Link>
             </div>
             <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {posts.map((post) => (
-                <PostCard key={post.slug} post={post} />
+                <PostCard key={post.slug} post={post} tone="light" />
               ))}
             </div>
           </div>

@@ -3,11 +3,11 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 const focusRing =
-  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lavender";
+  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan";
 
-export const buttonPrimary = `inline-flex min-h-13 items-center justify-center gap-2 rounded-full bg-lavender px-7 py-3.5 text-sm font-semibold text-ink shadow-[0_10px_40px_-10px_rgba(146,146,240,0.7)] transition hover:bg-white ${focusRing}`;
+export const buttonPrimary = `inline-flex min-h-13 items-center justify-center gap-2 rounded-full bg-cyan px-7 py-3.5 text-sm font-semibold text-navy transition hover:bg-white ${focusRing}`;
 
-export const buttonGhost = `inline-flex min-h-13 items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:border-white hover:bg-white/10 ${focusRing}`;
+export const buttonGhost = `inline-flex min-h-13 items-center justify-center gap-2 rounded-full border border-line/60 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:border-cyan hover:text-cyan ${focusRing}`;
 
 export function Logo() {
   return (
@@ -42,13 +42,14 @@ type PageHeroProps = {
 export function PageHero({ eyebrow, title, intro, image, children }: PageHeroProps) {
   return (
     <section className="relative isolate overflow-hidden bg-ink">
-      <Image src={image} alt="" fill priority sizes="100vw" className="-z-20 object-cover opacity-60" />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,var(--color-ink)_15%,rgba(1,11,51,0.85)_45%,rgba(2,24,97,0.35)_100%)]" />
+      <Image src={image} alt="" fill priority sizes="100vw" className="-z-20 object-cover opacity-45" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,var(--color-ink)_15%,rgba(17,45,132,0.88)_45%,rgba(2,24,97,0.45)_100%)]" />
+      <div aria-hidden="true" className="tech-grid absolute inset-0 -z-10" />
       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-linear-to-t from-ink to-transparent" />
 
       <div className="mx-auto max-w-7xl px-5 pb-20 pt-36 sm:px-6 sm:pb-28 sm:pt-44 lg:px-8 lg:pb-32 lg:pt-52">
         <p className="eyebrow text-lavender">{eyebrow}</p>
-        <h1 className="mt-6 max-w-4xl text-balance text-[clamp(2.4rem,6vw,4.75rem)] font-semibold leading-[1.02] tracking-[-0.045em]">
+        <h1 className="mt-6 max-w-4xl text-balance text-[clamp(2.4rem,6vw,4.75rem)] font-semibold leading-[1] tracking-[-0.05em]">
           {title}
         </h1>
         <div className="mt-8 max-w-2xl space-y-4 text-base leading-8 text-white/75 sm:text-lg">{intro}</div>
@@ -70,8 +71,8 @@ export function SectionHeader({ eyebrow, title, intro, tone = "dark", align = "l
   const light = tone === "light";
   return (
     <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      <p className={`eyebrow ${light ? "text-navy" : "text-lavender"}`}>{eyebrow}</p>
-      <h2 className={`mt-5 text-balance text-4xl font-semibold leading-[1.06] tracking-[-0.04em] sm:text-5xl ${light ? "text-ink" : "text-white"}`}>
+      <p className={`eyebrow ${light ? "text-teal" : "text-lavender"}`}>{eyebrow}</p>
+      <h2 className={`mt-5 text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.045em] sm:text-5xl ${light ? "text-ink" : "text-white"}`}>
         {title}
       </h2>
       {intro && (
@@ -88,10 +89,11 @@ type CtaBandProps = {
 
 export function CtaBand({ title, text }: CtaBandProps) {
   return (
-    <section className="bg-ink px-5 py-20 sm:px-6 sm:py-28 lg:px-8">
-      <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-white/10 px-6 py-16 text-center sm:px-12 sm:py-24">
+    <section className="bg-navy px-5 py-20 sm:px-6 sm:py-28 lg:px-8">
+      <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-line/30 px-6 py-16 text-center sm:px-12 sm:py-24">
         <Image src="/images/cta-bg.webp" alt="" fill sizes="(min-width: 1280px) 1280px, 100vw" className="-z-20 object-cover" />
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(2,24,97,0.55),rgba(1,11,51,0.92))]" />
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(17,45,132,0.82),rgba(2,24,97,0.96))]" />
+        <div aria-hidden="true" className="tech-grid absolute inset-0 -z-10" />
 
         <p className="eyebrow justify-center text-lavender">Let&apos;s build cyber resilience</p>
         <h2 className="mx-auto mt-6 max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-5xl lg:text-6xl">

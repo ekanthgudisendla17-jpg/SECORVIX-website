@@ -47,7 +47,7 @@ export default function CyberResiliencePage() {
           <ol className="mt-14 grid gap-4 sm:grid-cols-3 lg:grid-cols-6">
             {framework.map((step, i) => (
               <li key={step} className="rounded-3xl border border-navy/10 bg-white p-6 text-center">
-                <span className="text-4xl font-semibold tracking-tight text-lavender">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-mono text-4xl font-medium tracking-tight text-teal">{String(i + 1).padStart(2, "0")}</span>
                 <p className="mt-3 text-lg font-semibold">{step}</p>
               </li>
             ))}
@@ -76,7 +76,7 @@ export default function CyberResiliencePage() {
 
           <ul className="grid content-start gap-3 sm:grid-cols-2">
             {services.map((service) => (
-              <li key={service} className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 transition hover:border-lavender">
+              <li key={service} className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 transition hover:border-cyan">
                 <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-signal" />
                 <span className="font-medium">{service}</span>
               </li>

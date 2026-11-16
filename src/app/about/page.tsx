@@ -88,7 +88,7 @@ export default function AboutPage() {
           <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-navy/10 bg-navy/10 sm:grid-cols-2 lg:grid-cols-3">
             {principles.map(([letter, title, text]) => (
               <div key={title} className="flex gap-6 bg-white p-8">
-                <span aria-hidden="true" className="text-6xl font-semibold leading-none tracking-tight text-lavender">
+                <span aria-hidden="true" className="font-mono text-6xl font-medium leading-none tracking-tight text-teal">
                   {letter}
                 </span>
                 <div>
@@ -113,7 +113,7 @@ export default function AboutPage() {
               shortage of specialist expertise.
             </p>
           </div>
-          <div className="rounded-3xl bg-linear-to-br from-navy to-[#2a2f9a] p-8 sm:p-10">
+          <div className="rounded-3xl bg-linear-to-br from-navy to-ink p-8 sm:p-10">
             <p className="eyebrow text-lavender">The SECORVIX Advantage</p>
             <h2 className="mt-5 text-3xl font-semibold tracking-tight">Connected security. Clearer outcomes.</h2>
             <p className="mt-4 leading-8 text-white/80">
@@ -150,7 +150,7 @@ export default function AboutPage() {
           {statements.map(([label, text], i) => (
             <div
               key={label}
-              className={`rounded-3xl border border-white/10 p-8 sm:p-12 ${i === 0 || i === 3 ? "bg-linear-to-br from-navy to-[#2a2f9a]" : "bg-white/[0.03]"}`}
+              className={`rounded-3xl border border-white/10 p-8 sm:p-12 ${i === 0 || i === 3 ? "bg-linear-to-br from-navy to-ink" : "bg-white/[0.03]"}`}
             >
               <p className="eyebrow text-lavender">{label}</p>
               <p className="mt-6 text-balance text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">{text}</p>

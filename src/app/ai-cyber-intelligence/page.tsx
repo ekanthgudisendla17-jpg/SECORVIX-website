@@ -64,7 +64,7 @@ export default function AICyberIntelligencePage() {
           <div className="grid gap-5 lg:grid-cols-3">
             {pillars.map(([title, text], i) => (
               <div key={title} className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 sm:p-10">
-                <span className="text-sm font-semibold text-lavender">{String(i + 1).padStart(2, "0")}</span>
+                <span className="mono-label text-cyan">{String(i + 1).padStart(2, "0")}</span>
                 <h2 className="mt-4 text-2xl font-semibold tracking-tight">{title}</h2>
                 <p className="mt-3 leading-7 text-white/70">{text}</p>
               </div>

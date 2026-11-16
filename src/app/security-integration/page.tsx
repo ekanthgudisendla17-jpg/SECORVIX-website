@@ -51,7 +51,7 @@ export default function SecurityIntegrationPage() {
           <SectionHeader tone="light" eyebrow="Integration Lifecycle" title="Eight stages. One continuous programme." />
           <ol className="relative mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {lifecycle.map((step, i) => (
-              <li key={step} className="rounded-3xl border border-navy/10 bg-white p-7 shadow-[0_20px_50px_-35px_rgba(2,24,97,0.5)]">
+              <li key={step} className="rounded-3xl border border-navy/10 bg-white p-7">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-navy text-sm font-semibold text-white">
                   {String(i + 1).padStart(2, "0")}
                 </span>
