@@ -14,6 +14,12 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
+// Render pages on each request instead of serving prerendered files.
+// GoDaddy's Node hosting kept serving prerendered inner pages from an older
+// build after new versions were published (only the home page updated).
+// The site is small, so per-request rendering is cheap and always current.
+export const dynamic = "force-dynamic";
+
 const description =
   "SECORVIX delivers cybersecurity, security integration, managed security, AI-driven cyber intelligence and cyber resilience solutions for modern enterprises.";
 
