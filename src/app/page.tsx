@@ -58,9 +58,11 @@ export default async function Home() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative isolate flex min-h-[min(100svh,58rem)] items-end overflow-hidden bg-ink">
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(60%_45%_at_50%_70%,rgba(34,211,238,0.10),transparent_70%),linear-gradient(180deg,var(--color-navy),var(--color-ink)_55%)]" />
-        <div aria-hidden="true" className="tech-grid absolute inset-0 -z-10 [mask-image:linear-gradient(to_bottom,black,transparent_95%)]" />
+      <section className="relative isolate flex min-h-[min(100svh,58rem)] items-end overflow-hidden bg-abyss">
+        {/* Hero stage: darkest navy base, bright-navy + cyan glow behind the diagram, stronger grid */}
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(55%_60%_at_72%_48%,rgba(17,45,132,0.95),transparent_72%),radial-gradient(28%_32%_at_72%_58%,rgba(34,211,238,0.16),transparent_70%),linear-gradient(180deg,var(--color-abyss),#010c33)]" />
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgb(146_146_240/0.14)_1px,transparent_1px),linear-gradient(to_bottom,rgb(146_146_240/0.14)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(85%_80%_at_60%_45%,black,transparent_100%)]" />
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-cyan to-transparent" />
 
         <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-36 sm:px-6 sm:pb-20 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-10">
@@ -75,11 +77,11 @@ export default async function Home() {
             intelligence and AI to help organizations secure, connect and
             continuously protect their digital environments.
           </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Link href="/contact/" className={`group ${buttonPrimary}`}>
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+            <Link href="/contact/" className={`group whitespace-nowrap ${buttonPrimary}`}>
               Talk to a Security Expert <Arrow />
             </Link>
-            <Link href="/solutions/" className={`${buttonGhost} hover:text-white`}>
+            <Link href="/solutions/" className={`whitespace-nowrap ${buttonGhost}`}>
               Explore Our Capabilities
             </Link>
           </div>
@@ -95,7 +97,7 @@ export default async function Home() {
 
           <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line/30 bg-line/30 lg:grid-cols-4">
             {pillars.map(([title, text]) => (
-              <div key={title} className="bg-navy p-5 sm:p-6">
+              <div key={title} className="bg-abyss/90 p-5 sm:p-6">
                 <dt className="flex items-center gap-2 text-sm font-semibold text-white">
                   <span aria-hidden="true" className="h-1.5 w-1.5 bg-signal" />
                   {title}
@@ -108,7 +110,7 @@ export default async function Home() {
       </section>
 
       {/* Capabilities */}
-      <section id="solutions" className="bg-navy py-20 sm:py-24">
+      <section id="solutions" className="bg-ink py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeader
@@ -125,7 +127,7 @@ export default async function Home() {
             {capabilities.map(({ title, text, image }, i) => (
               <article key={title} className="zoom-media group relative isolate flex min-h-[21rem] flex-col justify-end overflow-hidden rounded-3xl border border-line/25 transition hover:border-cyan/70">
                 <Image src={image} alt="" fill sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw" className="-z-20 object-cover" />
-                <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-t from-navy via-navy/80 to-navy/10" />
+                <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-t from-ink via-ink/80 to-ink/10" />
                 <div className="p-7">
                   <span className="mono-label text-cyan">{pad(i)}</span>
                   <h3 className="mt-3 text-2xl font-semibold tracking-tight">{title}</h3>
@@ -138,7 +140,7 @@ export default async function Home() {
       </section>
 
       {/* How we help */}
-      <section id="services" className="relative isolate bg-ink py-20 sm:py-24">
+      <section id="services" className="relative isolate bg-navy py-20 sm:py-24">
         <div aria-hidden="true" className="tech-grid absolute inset-0 -z-10" />
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <SectionHeader
@@ -152,7 +154,7 @@ export default async function Home() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="group relative flex flex-col bg-navy p-7 transition hover:bg-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-cyan"
+                className="group relative flex flex-col bg-abyss/70 p-7 transition hover:bg-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-cyan"
               >
                 <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-cyan transition-transform duration-500 group-hover:scale-x-100" />
                 <span className="mono-label text-cyan">{pad(i)}</span>
