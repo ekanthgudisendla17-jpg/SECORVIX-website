@@ -37,10 +37,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b bg-navy transition-[border-color,box-shadow] duration-300 ${
         scrolled || open
-          ? "border-b border-line/20 bg-navy/90 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent"
+          ? "border-cyan/40 shadow-[0_12px_32px_-18px_rgba(1,15,64,0.9)]"
+          : "border-line/25"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-6 lg:px-8">
