@@ -7,7 +7,7 @@ import { navLinks, solutions } from "../lib/site";
 import { Logo } from "./ui";
 
 const focusRing =
-  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan";
+  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal";
 
 // usePathname() may or may not carry the trailing slash; compare without it.
 const trim = (path: string) => path.replace(/\/$/, "") || "/";
@@ -31,21 +31,21 @@ export default function Navbar() {
   const onSolutionsPage = solutions.some((s) => isActive(s.href));
 
   const linkClass = (active: boolean) =>
-    `relative py-2 text-sm transition ${active ? "text-white after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-signal" : "text-white/70 hover:text-white"} ${focusRing}`;
+    `relative py-2 text-sm transition ${active ? "text-navy font-medium after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-signal" : "text-navy/70 hover:text-navy"} ${focusRing}`;
 
   const [home, ...rest] = navLinks;
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b bg-navy transition-[border-color,box-shadow] duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b bg-white transition-[border-color,box-shadow] duration-300 ${
         scrolled || open
-          ? "border-cyan/40 shadow-[0_12px_32px_-18px_rgba(1,15,64,0.9)]"
-          : "border-line/25"
+          ? "border-navy/10 shadow-[0_10px_30px_-18px_rgba(1,15,64,0.6)]"
+          : "border-navy/10"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-6 lg:px-8">
         <Link href="/" aria-label="SECORVIX home" aria-current={isActive("/") ? "page" : undefined} className={focusRing} onClick={() => setOpen(false)}>
-          <Logo />
+          <Logo tone="light" />
         </Link>
 
         {/* Desktop */}
@@ -100,13 +100,13 @@ export default function Navbar() {
             </button>
 
             <div id={solutionsId} className={`absolute left-1/2 top-full w-80 -translate-x-1/2 pt-4 transition duration-200 ${isSolutionsOpen ? "visible opacity-100" : "invisible opacity-0"}`}>
-              <div className="rounded-2xl border border-line/30 bg-navy/95 p-2 backdrop-blur-xl">
+              <div className="rounded-2xl border border-navy/10 bg-white p-2 shadow-[0_20px_40px_-24px_rgba(1,15,64,0.5)]">
                 {solutions.map((s) => (
                   <Link
                     key={s.href}
                     href={s.href}
                     aria-current={isActive(s.href) ? "page" : undefined}
-                    className={`block rounded-xl px-4 py-3 text-sm transition ${isActive(s.href) ? "bg-white/10 text-cyan" : "text-white/80 hover:bg-white/5 hover:text-white"} ${focusRing}`}
+                    className={`block rounded-xl px-4 py-3 text-sm transition ${isActive(s.href) ? "bg-mist text-teal" : "text-navy/80 hover:bg-mist hover:text-navy"} ${focusRing}`}
                   >
                     {s.label}
                   </Link>
@@ -125,7 +125,7 @@ export default function Navbar() {
         <Link
           href="/contact/"
           aria-current={isActive("/contact/") ? "page" : undefined}
-          className={`hidden min-h-11 items-center rounded-full bg-cyan px-5 text-sm font-semibold text-navy transition hover:bg-white xl:inline-flex ${focusRing}`}
+          className={`hidden min-h-11 items-center rounded-full bg-navy px-5 text-sm font-semibold text-white transition hover:bg-ink xl:inline-flex ${focusRing}`}
         >
           Talk to an Expert
         </Link>
@@ -137,7 +137,7 @@ export default function Navbar() {
           aria-controls="mobile-menu"
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}
           onClick={() => setOpen((v) => !v)}
-          className={`flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white xl:hidden ${focusRing}`}
+          className={`flex h-11 w-11 items-center justify-center rounded-full border border-navy/20 text-navy xl:hidden ${focusRing}`}
         >
           <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5">
             {open ? (
@@ -151,7 +151,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <nav id="mobile-menu" aria-label="Mobile" className="max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-white/10 px-5 pb-8 pt-4 sm:px-6 xl:hidden">
+        <nav id="mobile-menu" aria-label="Mobile" className="max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-navy/10 px-5 pb-8 pt-4 sm:px-6 xl:hidden">
           <div className="flex flex-col">
             {[home, ...rest].map((link) => (
               <Link
@@ -159,14 +159,14 @@ export default function Navbar() {
                 href={link.href}
                 aria-current={isActive(link.href) ? "page" : undefined}
                 onClick={() => setOpen(false)}
-                className={`border-b border-white/10 py-4 text-base ${isActive(link.href) ? "text-cyan" : "text-white/85"} ${focusRing}`}
+                className={`border-b border-navy/10 py-4 text-base ${isActive(link.href) ? "text-teal font-medium" : "text-navy/85"} ${focusRing}`}
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          <p className="mt-6 mono-label text-lavender/70">Solutions</p>
+          <p className="mt-6 mono-label text-teal">Solutions</p>
           <div className="mt-2 flex flex-col">
             {solutions.map((s) => (
               <Link
@@ -174,7 +174,7 @@ export default function Navbar() {
                 href={s.href}
                 aria-current={isActive(s.href) ? "page" : undefined}
                 onClick={() => setOpen(false)}
-                className={`py-3 text-base ${isActive(s.href) ? "text-cyan" : "text-white/85"} ${focusRing}`}
+                className={`py-3 text-base ${isActive(s.href) ? "text-teal font-medium" : "text-navy/85"} ${focusRing}`}
               >
                 {s.label}
               </Link>
@@ -185,7 +185,7 @@ export default function Navbar() {
             href="/contact/"
             aria-current={isActive("/contact/") ? "page" : undefined}
             onClick={() => setOpen(false)}
-            className={`mt-6 flex min-h-12 items-center justify-center rounded-full bg-cyan font-semibold text-navy ${focusRing}`}
+            className={`mt-6 flex min-h-12 items-center justify-center rounded-full bg-navy font-semibold text-white ${focusRing}`}
           >
             Talk to an Expert
           </Link>

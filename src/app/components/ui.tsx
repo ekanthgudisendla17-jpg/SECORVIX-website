@@ -9,7 +9,7 @@ export const buttonPrimary = `inline-flex min-h-13 items-center justify-center g
 
 export const buttonGhost = `inline-flex min-h-13 items-center justify-center gap-2 rounded-full border border-line/60 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:border-cyan hover:text-cyan ${focusRing}`;
 
-export function Logo() {
+export function Logo({ tone = "dark" }: { tone?: "light" | "dark" }) {
   return (
     <span className="flex items-center gap-3">
       <svg aria-hidden="true" viewBox="0 0 64 64" className="h-9 w-9">
@@ -18,7 +18,7 @@ export function Logo() {
         <path d="M38.5 24.5c-1.6-2-4-3-6.7-3-3.6 0-6.3 2-6.3 4.9 0 6.6 13.2 3.7 13.2 10.6 0 3-2.9 5.2-6.9 5.2-3 0-5.6-1.2-7.3-3.4" fill="none" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" />
         <circle cx="45" cy="45" r="4" fill="#DE1110" />
       </svg>
-      <span className="text-lg font-semibold tracking-[0.28em] text-white">SECORVIX</span>
+      <span className={`text-lg font-semibold tracking-[0.28em] ${tone === "light" ? "text-navy" : "text-white"}`}>SECORVIX</span>
     </span>
   );
 }
