@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Arrow, CtaBand, SectionHeader, buttonGhost, buttonPrimary } from "../components/ui";
-import { slugify } from "../lib/content";
+import { capabilities, slugify } from "../lib/content";
 import {
   appSecTesting,
   attackChain,
@@ -214,6 +215,7 @@ export default function SecurityTechnologiesPage() {
       {/* Domains */}
       {domains.map((d, i) => {
         const light = i % 2 === 0;
+        const image = capabilities.find((c) => c.title === d.capability)?.image;
         return (
           <section
             key={d.id}
@@ -222,8 +224,8 @@ export default function SecurityTechnologiesPage() {
           >
             {!light && <div aria-hidden="true" className="tech-grid absolute inset-0 -z-10" />}
             <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-              <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-                <div className="max-w-3xl">
+              <div className="grid gap-10 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+                <div>
                   <div className="flex items-center gap-4">
                     <span
                       className={`flex h-12 w-12 items-center justify-center rounded-xl border ${
@@ -238,13 +240,22 @@ export default function SecurityTechnologiesPage() {
                   </div>
                   <h2 className="mt-6 text-4xl font-semibold leading-[1.04] tracking-[-0.045em] sm:text-5xl">{d.title}</h2>
                   <p className={`mt-5 text-lg leading-8 ${light ? "text-navy/75" : "text-white/70"}`}>{d.summary}</p>
+                  <Link
+                    href={`/solutions/#${slugify(d.capability)}`}
+                    className={`group mt-6 inline-flex items-center gap-2 font-semibold ${light ? "text-teal" : "text-cyan"}`}
+                  >
+                    Our approach <Arrow />
+                  </Link>
                 </div>
-                <Link
-                  href={`/solutions/#${slugify(d.capability)}`}
-                  className={`group inline-flex shrink-0 items-center gap-2 font-semibold ${light ? "text-teal" : "text-cyan"}`}
-                >
-                  Our approach <Arrow />
-                </Link>
+                {image && (
+                  <div className={`zoom-media relative aspect-[16/9] overflow-hidden rounded-3xl border ${light ? "border-navy/10" : "border-line/30"}`}>
+                    <Image src={image} alt="" fill sizes="(min-width: 1024px) 560px, 100vw" className="object-cover" />
+                    <div aria-hidden="true" className="absolute inset-0 bg-linear-to-tr from-navy/50 via-transparent to-transparent" />
+                    <span className="mono-label absolute bottom-4 left-4 rounded-md bg-navy/80 px-2.5 py-1 text-white backdrop-blur">
+                      {d.items.map((t) => t.code).join(" · ")}
+                    </span>
+                  </div>
+                )}
               </div>
               <div className={`mt-12 grid gap-4 sm:grid-cols-2 ${d.items.length % 3 === 0 || d.items.length > 4 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
                 {d.items.map((t) => (
@@ -266,8 +277,18 @@ export default function SecurityTechnologiesPage() {
           />
           <div className="mt-12 grid gap-4 lg:grid-cols-2">
             {operatingModels.map((m) => (
-              <article key={m.code} className="relative flex flex-col overflow-hidden rounded-3xl border border-line/30 bg-abyss/60 p-8 sm:p-10">
-                <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-cyan via-cyan/40 to-transparent" />
+              <article key={m.code} className="zoom-media relative flex flex-col overflow-hidden rounded-3xl border border-line/30 bg-abyss/60">
+                <div className="relative aspect-[16/7]">
+                  <Image
+                    src={m.code === "SOC" ? "/images/hero-managed.webp" : "/images/zero-trust.webp"}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 620px, 100vw"
+                    className="object-cover"
+                  />
+                  <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-abyss via-abyss/30 to-transparent" />
+                </div>
+                <div className="flex flex-1 flex-col p-8 pt-2 sm:p-10 sm:pt-2">
                 <span className="mono-label text-cyan">{m.code}</span>
                 <h3 className="mt-5 text-3xl font-semibold tracking-tight">{m.name}</h3>
                 <p className="mt-4 flex-1 leading-8 text-white/75">{m.what}</p>
@@ -281,6 +302,7 @@ export default function SecurityTechnologiesPage() {
                 >
                   {m.code === "SOC" ? "Managed Security & SOC" : "Zero Trust at SECORVIX"} <Arrow />
                 </Link>
+                </div>
               </article>
             ))}
           </div>
