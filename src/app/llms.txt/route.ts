@@ -9,6 +9,7 @@ export const dynamic = "force-static";
 const pages = [
   ["About SECORVIX", "/about/", "Who we are, our six principles (Security, Orchestration, Resilience, Visibility, Intelligence, eXecution), approach, vision and mission."],
   ["Cybersecurity Solutions", "/solutions/", "Network, cloud, identity & access, endpoint, data & application security, security operations and Zero Trust."],
+  ["Solutions & Technologies", "/security-technologies/", "Catalogue of the security technologies SECORVIX designs, integrates and operates: NGFW, IDS/IPS, NAC, SWG, cloud security (CNAPP, CASB), email security, IAM, MFA, PAM, IGA, antivirus, EDR, XDR, patch management, DLP, application and API security, WAF, backup and disaster recovery, SIEM, SOAR, vulnerability management, Zero Trust and 24x7 SOC; plus cloud security controls, SAST/SCA/DAST and EDR detection coverage by attack stage."],
   ["Security Integration", "/security-integration/", "Vendor-neutral security architecture, technology integration, migration, consolidation, deployment, optimization and automation."],
   ["Managed Security", "/managed-security/", "SOC, SIEM, threat detection, threat hunting, incident response, MDR, security automation and security analytics."],
   ["AI & Cyber Intelligence", "/ai-cyber-intelligence/", "AI-assisted detection, intelligent analysis and automated response that augment human security expertise."],

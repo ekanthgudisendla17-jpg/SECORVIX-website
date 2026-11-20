@@ -12,6 +12,7 @@ export const telHref = (phone: string) => `tel:${phone.replace(/[^\d+]/g, "")}`;
 export const solutions = [
   { href: "/ai-cyber-intelligence/", label: "AI & Cyber Intelligence" },
   { href: "/solutions/", label: "Cybersecurity Solutions" },
+  { href: "/security-technologies/", label: "Solutions & Technologies" },
   { href: "/security-integration/", label: "Security Integration" },
   { href: "/managed-security/", label: "Managed Security" },
   { href: "/cyber-resilience/", label: "Cyber Resilience" },
@@ -40,6 +41,7 @@ export const staticRoutes = [
   "/",
   "/about/",
   "/solutions/",
+  "/security-technologies/",
   "/security-integration/",
   "/managed-security/",
   "/ai-cyber-intelligence/",

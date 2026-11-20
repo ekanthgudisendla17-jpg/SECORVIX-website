@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import { Arrow, CtaBand, PageHero, SectionHeader } from "../components/ui";
 import { capabilities, slugify } from "../lib/content";
 import { solutions } from "../lib/site";
+import { domains } from "../lib/technologies";
 
 export const metadata: Metadata = {
   title: "Cybersecurity Solutions",
@@ -47,6 +48,24 @@ export default function SolutionsPage() {
                 <span className="text-sm font-semibold tracking-[0.2em] text-signal">{String(i + 1).padStart(2, "0")}</span>
                 <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>
                 <p className="mt-4 max-w-lg leading-8 text-navy/75">{text}</p>
+                {(() => {
+                  const domain = domains.find((d) => d.capability === title);
+                  if (!domain) return null;
+                  return (
+                    <div className="mt-6">
+                      <ul className="flex flex-wrap gap-2">
+                        {domain.items.map((t) => (
+                          <li key={t.code} className="rounded-md border border-teal/25 bg-white px-2.5 py-1 font-mono text-xs tracking-[0.08em] text-teal">
+                            {t.code}
+                          </li>
+                        ))}
+                      </ul>
+                      <Link href={`/security-technologies/#${domain.id}`} className="group mt-5 inline-flex items-center gap-2 text-sm font-semibold text-teal">
+                        See the technologies <Arrow />
+                      </Link>
+                    </div>
+                  );
+                })()}
               </div>
             </article>
           ))}
@@ -54,7 +73,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Zero Trust */}
-      <section className="bg-mist py-20 sm:py-24">
+      <section id="zero-trust" className="scroll-mt-24 bg-mist py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <div className="grid overflow-hidden rounded-[2rem] lg:grid-cols-2">
             <div className="relative min-h-72">
